@@ -6,7 +6,8 @@
     "unity": "2018.3",
     "unityRelease": "10f1",
     "keywords": [
-        "pattern"
+        "indicator",
+        "pointer"
     ],
     "homepage": "https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/",
     "bugs": {
