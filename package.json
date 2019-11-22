@@ -1,20 +1,20 @@
 {
-    "name": "io.extendreality.tilia.{scope}.{feature}.{platform?}",
-    "displayName": "Tilia {scope}.{feature}.{platform?}",
-    "description": "{Description of feature.}",
+    "name": "io.extendreality.tilia.indicators.objectpointers.unity",
+    "displayName": "Tilia Indicators ObjectPointers Unity",
+    "description": "Indicate points in world space with a collection of object based pointers for the Unity software.",
     "version": "1.0.0",
     "unity": "2018.3",
     "unityRelease": "10f1",
     "keywords": [
         "pattern"
     ],
-    "homepage": "https://github.com/ExtendRealityLtd/Tilia.{scope}.{feature}.{platform?}/",
+    "homepage": "https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/",
     "bugs": {
-        "url": "https://github.com/ExtendRealityLtd/Tilia.{scope}.{feature}.{platform?}/issues"
+        "url": "https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/issues"
     },
     "repository": {
         "type": "git",
-        "url": "ssh://git@github.com/ExtendRealityLtd/Tilia.{scope}.{feature}.{platform?}.git"
+        "url": "ssh://git@github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity.git"
     },
     "license": "MIT",
     "author": {
@@ -23,7 +23,9 @@
         "url": "https://github.com/ExtendRealityLtd"
     },
     "dependencies": {
-        "io.extendreality.zinnia.unity": "X.Y.Z"
+        "io.extendreality.zinnia.unity": "1.8.0",
+        "io.extendreality.tilia.utilities.shaders.unity": "1.0.0",
+        "io.extendreality.tilia.mutators.objectfollower.unity": "1.0.0"
     },
     "files": [
         "*.md",
