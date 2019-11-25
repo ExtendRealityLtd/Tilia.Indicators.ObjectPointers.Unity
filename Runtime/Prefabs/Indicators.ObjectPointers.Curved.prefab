@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 1977522402952244861}
   - component: {fileID: 2402421270702372836}
   m_Layer: 0
-  m_Name: ObjectPointer.Curved
+  m_Name: Indicators.ObjectPointers.Curved
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -544,6 +544,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObjectPointer.Internal
       objectReference: {fileID: 0}
+    - target: {fileID: 6670911739145006535, guid: b5bcf67f1f80d1a4f800327247af655a,
+        type: 3}
+      propertyPath: caster
+      value: 
+      objectReference: {fileID: 8391352710448912418}
+    - target: {fileID: 6670911739145006535, guid: b5bcf67f1f80d1a4f800327247af655a,
+        type: 3}
+      propertyPath: facade
+      value: 
+      objectReference: {fileID: 2402421270702372836}
     - target: {fileID: 333590899294449391, guid: b5bcf67f1f80d1a4f800327247af655a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -599,16 +609,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6670911739145006535, guid: b5bcf67f1f80d1a4f800327247af655a,
-        type: 3}
-      propertyPath: caster
-      value: 
-      objectReference: {fileID: 8391352710448912418}
-    - target: {fileID: 6670911739145006535, guid: b5bcf67f1f80d1a4f800327247af655a,
-        type: 3}
-      propertyPath: facade
-      value: 
-      objectReference: {fileID: 2402421270702372836}
     - target: {fileID: 1639799280548245475, guid: b5bcf67f1f80d1a4f800327247af655a,
         type: 3}
       propertyPath: Appeared.m_PersistentCalls.m_Calls.Array.size
