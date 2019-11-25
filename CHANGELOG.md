@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.4](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.0.3...v1.0.4) (2019-11-25)
+
+#### Bug Fixes
+
+* **HowToGuides:** add missing guide for curved pointer ([7d6fc73](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/7d6fc73424423b0c1bc018f25a9fbd4eda325d58))
+  > The curved pointer was missing documentation this has now been added.
+
 ### [1.0.3](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.0.2...v1.0.3) (2019-11-25)
 
 #### Bug Fixes
