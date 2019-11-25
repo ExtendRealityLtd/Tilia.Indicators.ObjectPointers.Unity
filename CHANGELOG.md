@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.3](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.0.2...v1.0.3) (2019-11-25)
+
+#### Bug Fixes
+
+* **HowToGuides:** add missing straight pointer usage guide ([75eb240](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/75eb240920fc76518120d8115089ab7fa597a38f))
+  > The Straight Pointer had no user guide to show how to add it to a scene. A new user guide has been added to rectify this issue.
+
 ### [1.0.2](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.0.1...v1.0.2) (2019-11-22)
 
 #### Miscellaneous Chores
