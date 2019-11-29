@@ -7,6 +7,7 @@
     using Malimbe.XmlDocumentationAttribute;
     using UnityEngine;
     using Zinnia.Action;
+    using Zinnia.Cast;
     using Zinnia.Data.Attribute;
     using Zinnia.Pointer;
     using Zinnia.Rule;
@@ -62,6 +63,12 @@
         [Serialized, Cleared]
         [field: DocumentedByXml]
         public RuleContainer TargetValidity { get; set; }
+        /// <summary>
+        /// Allows to optionally define the rules for the raycast of the pointer beam elements.
+        /// </summary>
+        [Serialized, Cleared]
+        [field: DocumentedByXml]
+        public PhysicsCast RaycastRules { get; set; }
         #endregion
 
         #region Pointer Events
@@ -175,6 +182,15 @@
         protected virtual void OnAfterTargetValidityChange()
         {
             Configuration.ConfigureTargetValidity();
+        }
+
+        /// <summary>
+        /// Called after <see cref="RaycastRules"/> has been changed.
+        /// </summary>
+        [CalledAfterChangeOf(nameof(RaycastRules))]
+        protected virtual void OnAfterRaycastRulesChange()
+        {
+            Configuration.ConfigureRaycastRules();
         }
     }
 }

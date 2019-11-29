@@ -81,6 +81,14 @@
         }
 
         /// <summary>
+        /// Configures the physics raycast rules based on the facade settings.
+        /// </summary>
+        public virtual void ConfigureRaycastRules()
+        {
+            Caster.PhysicsCast = Facade.RaycastRules;
+        }
+
+        /// <summary>
         /// Configures the object follow sources based on the facade settings.
         /// </summary>
         public virtual void ConfigureFollowSources()
