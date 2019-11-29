@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.0.6...v1.1.0) (2019-11-29)
+
+#### Features
+
+* **Facade:** expose caster physics cast on facade ([da85d02](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/da85d02b659ecee9b725e10a05a6be93be132157))
+  > The internal caster contains a PhysicsCast property that allows the rules of the raycast to be changed. This property is now exposed on the Facade to make it easier to discover and change.
+
 ### [1.0.6](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.0.5...v1.0.6) (2019-11-27)
 
 #### Miscellaneous Chores
