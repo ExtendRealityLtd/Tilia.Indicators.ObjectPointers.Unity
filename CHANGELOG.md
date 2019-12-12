@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.3](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.1.2...v1.1.3) (2019-12-12)
+
+#### Bug Fixes
+
+* **Runtime:** add missing FodyWeavers.xml file ([399384a](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/399384a94a1c83c4b13eacb14712a80c217f7eed))
+  > There was no FodyWeavers.xml file so when the package was included in another project it would not load in the Malimbe components and therefore the prefabs would be broken.
+
 ### [1.1.2](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.1.1...v1.1.2) (2019-12-02)
 
 #### Miscellaneous Chores
