@@ -208,6 +208,7 @@
         protected virtual void OnEnable()
         {
             ConfigureTargetValidity();
+            ConfigureRaycastRules();
             ConfigureFollowSources();
             ConfigureSelectionType();
         }
