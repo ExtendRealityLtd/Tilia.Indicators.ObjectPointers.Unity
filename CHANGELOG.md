@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.12](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.1.11...v1.1.12) (2020-04-11)
+
+#### Bug Fixes
+
+* **Configurator:** ensure custom raycast rules are set up on enable ([93f3550](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/93f35506a86bca0374a68ccda0f8d5955f3b53e1))
+  > The Raycast Rules option on the Facade was not being set up in the Configurator when the script became enabled so the actual custom rules were not being copied down to the lower elements that require the rule.
+
 ### [1.1.11](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.1.10...v1.1.11) (2020-04-03)
 
 #### Miscellaneous Chores
