@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.0](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.1.12...v1.2.0) (2020-04-14)
+
+#### Features
+
+* **Extraction:** update Extractors to use new Zinna generic types ([5a18489](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/5a1848924ddf18f6a93033a9788944e48077f606))
+  > Zinnia version 1.15.0 has new generic Extractor types that offer a consistent Extractor API.
+  > 
+  > The ObjectPointer extractors have been updated so they extend these new generic types so they offer a consistent API.
+
 ### [1.1.12](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.1.11...v1.1.12) (2020-04-11)
 
 #### Bug Fixes
