@@ -1,39 +1,16 @@
-﻿namespace Tilia.Indicators.ObjectPointers
+﻿namespace Tilia.Indicators.ObjectPointers.Operation.Extraction
 {
     using Malimbe.BehaviourStateRequirementMethod;
-    using Malimbe.MemberClearanceMethod;
-    using Malimbe.PropertySerializationAttribute;
-    using Malimbe.XmlDocumentationAttribute;
     using UnityEngine;
     using Zinnia.Data.Operation.Extraction;
     using Zinnia.Data.Type;
     using Zinnia.Pointer;
 
     /// <summary>
-    /// Extracts and emits the <see cref="Source"/> residing <see cref="GameObject"/>.
+    /// Extracts and emits the <see cref="GameObject"/> found in relation to the <see cref="Source"/>.
     /// </summary>
-    public class PointerFacadeGameObjectExtractor : GameObjectExtractor
+    public class PointerFacadeGameObjectExtractor : ComponentGameObjectExtractor
     {
-        /// <summary>
-        /// The source to extract from.
-        /// </summary>
-        [Serialized, Cleared]
-        [field: DocumentedByXml]
-        public PointerFacade Source { get; set; }
-
-        /// <inheritdoc />
-        public override GameObject Extract()
-        {
-            if (Source == null)
-            {
-                Result = null;
-                return null;
-            }
-
-            Result = Source.gameObject;
-            return base.Extract();
-        }
-
         /// <summary>
         /// Extracts the <see cref="Source"/> <see cref="GameObject"/> from the given <see cref="SurfaceData"/> payload data.
         /// </summary>
@@ -95,6 +72,12 @@
         public virtual void SetSource(ObjectPointer.EventData source)
         {
             SetSource((SurfaceData)source);
+        }
+
+        /// <inheritdoc />
+        protected override GameObject ExtractValue()
+        {
+            return Source.GetType() == typeof(PointerFacade) ? base.ExtractValue() : null;
         }
     }
 }

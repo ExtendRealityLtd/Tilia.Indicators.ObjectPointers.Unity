@@ -1,7 +1,6 @@
-﻿namespace Tilia.Indicators.ObjectPointers
+﻿namespace Tilia.Indicators.ObjectPointers.Operation.Extraction
 {
     using Malimbe.BehaviourStateRequirementMethod;
-    using Malimbe.MemberClearanceMethod;
     using Malimbe.PropertySerializationAttribute;
     using Malimbe.XmlDocumentationAttribute;
     using UnityEngine;
@@ -13,7 +12,7 @@
     /// <summary>
     /// Extracts and emits the selected <see cref="Component"/> residing <see cref="GameObject"/> from the <see cref="Source"/>.
     /// </summary>
-    public class PointerFacadeComponentGameObjectExtractor : GameObjectExtractor
+    public class PointerFacadeComponentGameObjectExtractor : ComponentGameObjectExtractor
     {
         /// <summary>
         /// The Pointer Component to be extracted.
@@ -39,12 +38,6 @@
         }
 
         /// <summary>
-        /// The source to extract from.
-        /// </summary>
-        [Serialized, Cleared]
-        [field: DocumentedByXml]
-        public PointerFacade Source { get; set; }
-        /// <summary>
         /// The <see cref="PointerComponentType"/> to extract from the <see cref="Source"/>.
         /// </summary>
         [Serialized]
@@ -52,54 +45,28 @@
         public PointerComponentType PointerComponent { get; set; } = PointerComponentType.Caster;
 
         /// <inheritdoc />
-        public override GameObject Extract()
+        protected override GameObject ExtractValue()
         {
-            Result = null;
-
-            if (Source == null)
+            if (Source == null || Source.GetType() != typeof(PointerFacade))
             {
                 return null;
             }
 
+            PointerFacade pointerSource = (PointerFacade)Source;
+
             switch (PointerComponent)
             {
                 case PointerComponentType.Caster:
-                    Result = Source.Configuration.Caster.gameObject;
-                    break;
+                    return pointerSource.Configuration.Caster.gameObject;
                 case PointerComponentType.PointerElementOrigin:
-                    Result = Source.Configuration.ObjectPointer.Origin.gameObject;
-                    break;
+                    return pointerSource.Configuration.ObjectPointer.Origin.gameObject;
                 case PointerComponentType.PointerElementRepeatedSegment:
-                    Result = Source.Configuration.ObjectPointer.RepeatedSegment.gameObject;
-                    break;
+                    return pointerSource.Configuration.ObjectPointer.RepeatedSegment.gameObject;
                 case PointerComponentType.PointerElementDestination:
-                    Result = Source.Configuration.ObjectPointer.Destination.gameObject;
-                    break;
+                    return pointerSource.Configuration.ObjectPointer.Destination.gameObject;
                 default:
                     return null;
             }
-
-            return base.Extract();
-        }
-
-        /// <summary>
-        /// Extracts the <see cref="Source"/> <see cref="GameObject"/> from the given <see cref="PointerFacade"/> data.
-        /// </summary>
-        /// <param name="data">The <see cref="PointerFacade"/> payload data to extract from.</param>
-        /// <returns>The <see cref="Source"/> <see cref="GameObject"/> within the <see cref="PointerFacade"/>.</returns>
-        public virtual GameObject Extract(PointerFacade facade)
-        {
-            Source = facade;
-            return Extract();
-        }
-
-        /// <summary>
-        /// Extracts the <see cref="Source"/> <see cref="GameObject"/> from the given <see cref="PointerFacade"/> data.
-        /// </summary>
-        /// <param name="data">The <see cref="PointerFacade"/> payload data to extract from.</param>
-        public virtual void DoExtract(PointerFacade facade)
-        {
-            Extract(facade);
         }
 
         /// <summary>
