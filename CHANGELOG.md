@@ -1,5 +1,16 @@
 # Changelog
 
+### [1.2.1](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.2.0...v1.2.1) (2020-04-21)
+
+#### Bug Fixes
+
+* **Prefabs:** send top level GameObject as event source ([0393bd2](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/0393bd207c244ceccbee9f7e512e95f7c9966435))
+  > Zinnia 1.16.0 brings a new option to the ObjectPointer that allows the a custom GameObject to be provided as the source of the pointer event.
+  > 
+  > Previously, this source was always the GameObject that the ObjectPointer component was on, but this made it difficult to set rules based around the pointers as the GameObject with the PointerFacade on would not be the source and therefore not make it possible to simply provide the whole pointer prefab in a rule.
+  > 
+  > This change now sets the top level GameObejct as the ObjectPointer event source so any rule that requires to know about a pointer can simply use the top level pointer prefab GameObject.
+
 ## [1.2.0](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.1.12...v1.2.0) (2020-04-14)
 
 #### Features
