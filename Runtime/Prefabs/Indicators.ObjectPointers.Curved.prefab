@@ -180,6 +180,7 @@ MonoBehaviour:
   selectionMethod: 0
   targetValidity:
     field: {fileID: 0}
+  raycastRules: {fileID: 0}
   Activated:
     m_PersistentCalls:
       m_Calls: []
@@ -544,16 +545,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObjectPointer.Internal
       objectReference: {fileID: 0}
-    - target: {fileID: 6670911739145006535, guid: b5bcf67f1f80d1a4f800327247af655a,
-        type: 3}
-      propertyPath: caster
-      value: 
-      objectReference: {fileID: 8391352710448912418}
-    - target: {fileID: 6670911739145006535, guid: b5bcf67f1f80d1a4f800327247af655a,
-        type: 3}
-      propertyPath: facade
-      value: 
-      objectReference: {fileID: 2402421270702372836}
     - target: {fileID: 333590899294449391, guid: b5bcf67f1f80d1a4f800327247af655a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -609,6 +600,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6670911739145006535, guid: b5bcf67f1f80d1a4f800327247af655a,
+        type: 3}
+      propertyPath: caster
+      value: 
+      objectReference: {fileID: 8391352710448912418}
+    - target: {fileID: 6670911739145006535, guid: b5bcf67f1f80d1a4f800327247af655a,
+        type: 3}
+      propertyPath: facade
+      value: 
+      objectReference: {fileID: 2402421270702372836}
     - target: {fileID: 1639799280548245475, guid: b5bcf67f1f80d1a4f800327247af655a,
         type: 3}
       propertyPath: Appeared.m_PersistentCalls.m_Calls.Array.size
@@ -689,6 +690,11 @@ PrefabInstance:
       propertyPath: Appeared.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1639799280548245475, guid: b5bcf67f1f80d1a4f800327247af655a,
+        type: 3}
+      propertyPath: eventDataOriginTransformOverride
+      value: 
+      objectReference: {fileID: 1322672732093859771}
     - target: {fileID: 2680025304086750293, guid: b5bcf67f1f80d1a4f800327247af655a,
         type: 3}
       propertyPath: elements.Array.size
