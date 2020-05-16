@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.2](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.2.1...v1.2.2) (2020-05-16)
+
+#### Bug Fixes
+
+* **Operation:** prevent null exception if Source not set ([02d5d36](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/02d5d367c7f151e481f9e4f246da40501288b148))
+  > The Source property can be null and the Extract method can be called which causes a null exception. This fix just checks to see if Source is not null before attempting to extract.
+
 ### [1.2.1](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.2.0...v1.2.1) (2020-04-21)
 
 #### Bug Fixes
