@@ -77,7 +77,7 @@
         /// <inheritdoc />
         protected override GameObject ExtractValue()
         {
-            return Source.GetType() == typeof(PointerFacade) ? base.ExtractValue() : null;
+            return Source != null && Source.GetType() == typeof(PointerFacade) ? base.ExtractValue() : null;
         }
     }
 }
