@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.2.13...v1.3.0) (2020-07-03)
+
+#### Features
+
+* **API:** add auto-generated API documentation ([25863bf](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/25863bfca0ec4417e07d3e713f0a191fd261ae64))
+  > The API documentation is auto generated with docfx and converted to markdown via turndown in a custom nodejs script.
+
+#### Bug Fixes
+
+* **package.json:** add docfx.json file ([cda9c7d](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/cda9c7d938bd1773dfb2e4b48712b700418b6ea1))
+  > The docfx.json file was missing from the package.json causing the build process to fail. It has now been added.
+
 ### [1.2.13](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.2.12...v1.2.13) (2020-06-21)
 
 #### Miscellaneous Chores
