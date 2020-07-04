@@ -24,7 +24,7 @@ The Curved Pointer is a popular choice when creating a teleport locomotion featu
 
 ### Step 1
 
-Expand the `Tilia Indicators ObjectPointers Unity` Package directory in the Unity Project window and select then `Packages -> Tilia Indicators ObjectPointers Unity -> Runtime -> Prefabs` directory then drag and drop the `Indicators.ObjectPointers.Curved` prefab into the Hierarchy window.
+Expand the `Tilia Indicators ObjectPointers Unity` Package directory in the Unity Project window and select the `Packages -> Tilia Indicators ObjectPointers Unity -> Runtime -> Prefabs` directory then drag and drop the `Indicators.ObjectPointers.Curved` prefab into the Unity Hierarchy window.
 
 ![Adding Prefab To Scene](assets/images/AddingPrefabToScene.png)
 
@@ -32,28 +32,28 @@ Expand the `Tilia Indicators ObjectPointers Unity` Package directory in the Unit
 
 Select the `Indicators.ObjectPointers.Curved` prefab in the Unity Hierarchy and change the `Pointer Facade` component to configure the base functionality of the Pointer.
 
-The `Follow Source` parameter determines what GameObject the Pointer should track in the scene, for example, if we want the Pointer to follow around the Right Controller GameObject then drag and drop the `CameraRigs.TrackedAlias -> Aliases -> RightControllerAlias` GameObject into the `Follow Source` parameter on the `Pointer Facade` component.
+The `Follow Source` property determines what GameObject the Pointer should track in the scene, for example, if we want the Pointer to follow around the Right Controller GameObject then drag and drop the `CameraRigs.TrackedAlias -> Aliases -> RightControllerAlias` GameObject into the `Follow Source` property on the `Pointer Facade` component.
 
 ![Drag And Drop Right Controller Alias As Pointer Follow Source](assets/images/DragAndDropRightControllerAliasAsPointerFollowSource.png)
 
 ### Step 3
 
-The Curved Pointer will be deactivated by default so we need a way of activating and deactivating the Pointer beam. This is done by hooking up a `BooleanAction`, when it emits `true` it will activate the Pointer and when it emits `false` it will deactivate the Pointer.
+The Curved Pointer will be deactivated by default so we need a way of activating and deactivating the Pointer beam. This is done by hooking up a `Boolean Action` that will activate the Pointer when it emits `true` and deactivate the Pointer when it emits `false`.
 
-Any `BooleanAction` can be used to perform the activation/deactivation of the Pointer but in this instance we’re going to use the `Input.UnityInputManager.ButtonAction` that is already in the scene. The existing `BooleanAction` will emit `true` when the `Space` key is pressed and will emit `false` when the `Space` key is released.
+Any `Boolean Action` can be used to perform the activation/deactivation of the Pointer but in this instance we’re going to use the `Input.UnityInputManager.ButtonAction` that is already in the scene. The existing `Boolean Action` will emit `true` when the `Space` key is pressed and will emit `false` when the `Space` key is released.
 
-Drag and drop the `Input.UnityInputManager.ButtonAction` GameObject into the `Activation Action` parameter on the `Pointer Facade` component.
+Drag and drop the `Input.UnityInputManager.ButtonAction` GameObject into the `Activation Action` property on the `Pointer Facade` component.
 
 ![Drag And Drop Boolean Action Onto Activation Action](assets/images/DragAndDropBooleanActionOntoActivationAction.png)
 
 ### Done
 
-We won’t use any of the other `Pointer Facade` parameters for now as we have all we need for a Curved Pointer to be activated when the `Space` key is pressed and it will point in a curved line in whatever direction the Right Controller is pointing.
+We won’t use any of the other `Pointer Facade` properties for now as we have all we need for a Curved Pointer to be activated when the `Space` key is pressed and it will point in a curved line in whatever direction the Right Controller is pointing.
 
 Play the Unity scene and press the `Space` key and the Curved Pointer will emit a beam from the controller pointing in the forward direction of the controller. Notice how the Curved Pointer beam has two states when it is activated:
 
-* Valid Collision - The Curved Pointer is colliding with a valid GameObject and displays as a green line.
-* Invalid/No Collision - The Curved Pointer is not colliding with any valid GameObject and displays as a red line.
+* `Valid Collision` - The Curved Pointer is colliding with a valid GameObject and displays as a green line.
+* `Invalid/No Collision` - The Curved Pointer is not colliding with any valid GameObject and displays as a red line.
 
 ![Curved Pointer Activated In Scene](assets/images/CurvedPointerActivatedInScene.png)
 
