@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.3.1](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.3.0...v1.3.1) (2020-07-04)
+
+#### Bug Fixes
+
+* **Documentation:** apply style guidelines ([c11a1e9](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/c11a1e98f6e9b69f611738b448b07ad319d5a487))
+  > The guide has had the style guidelines applied to it to make it more consistent.
+
 ## [1.3.0](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.2.13...v1.3.0) (2020-07-03)
 
 #### Features
