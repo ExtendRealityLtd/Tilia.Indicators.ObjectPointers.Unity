@@ -114,6 +114,15 @@
         #endregion
 
         /// <summary>
+        /// Sets <see cref="SelectionMethod"/>.
+        /// </summary>
+        /// <param name="selectionMethodIndex">The index of the <see cref="SelectionType"/>.</param>
+        public virtual void SetSelectionMethod(int selectionMethodIndex)
+        {
+            SelectionMethod = (SelectionType)Mathf.Clamp(selectionMethodIndex, 0, System.Enum.GetValues(typeof(SelectionType)).Length);
+        }
+
+        /// <summary>
         /// The Activate method turns on the <see cref="ObjectPointer"/>.
         /// </summary>
         [RequiresBehaviourState]
