@@ -32,6 +32,7 @@ The public interface into the Pointer Prefab.
   * [OnAfterSelectionMethodChange()]
   * [OnAfterTargetValidityChange()]
   * [Select()]
+  * [SetSelectionMethod(Int32)]
 
 ## Details
 
@@ -276,9 +277,24 @@ Gets the current ObjectPointer state and emits it through [Selected].
 public virtual void Select()
 ```
 
+#### SetSelectionMethod(Int32)
+
+Sets [SelectionMethod].
+
+##### Declaration
+
+```
+public virtual void SetSelectionMethod(int selectionMethodIndex)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| System.Int32 | selectionMethodIndex | The index of the [PointerFacade.SelectionType]. |
+
 [Tilia.Indicators.ObjectPointers]: README.md
 [PointerConfigurator]: PointerConfigurator.md
-[PointerFacade.SelectionType]: PointerFacade.SelectionType.md
 [ActivationAction]: PointerFacade.md#ActivationAction
 [FollowSource]: PointerFacade.md#FollowSource
 [RaycastRules]: PointerFacade.md#RaycastRules
@@ -286,6 +302,8 @@ public virtual void Select()
 [SelectionMethod]: PointerFacade.md#SelectionMethod
 [TargetValidity]: PointerFacade.md#TargetValidity
 [Selected]: PointerFacade.md#Selected
+[SelectionMethod]: PointerFacade.md#SelectionMethod
+[PointerFacade.SelectionType]: PointerFacade.SelectionType.md
 [Inheritance]: #Inheritance
 [Namespace]: #Namespace
 [Syntax]: #Syntax
@@ -314,3 +332,4 @@ public virtual void Select()
 [OnAfterSelectionMethodChange()]: #OnAfterSelectionMethodChange
 [OnAfterTargetValidityChange()]: #OnAfterTargetValidityChange
 [Select()]: #Select
+[SetSelectionMethod(Int32)]: #SetSelectionMethodInt32
