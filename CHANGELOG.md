@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.3.1...v1.4.0) (2020-07-07)
+
+#### Features
+
+* **PointerFacade:** add way to change SelectionMethod by a UnityEvent ([38f3409](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/38f3409cf196b5296193df98c9d758f612a53ffe))
+  > The SelectionType property can now be changed via a UnityEvent by calling the SetSelectionMethod method and passing in the int to represent the Enum value to change to.
+
 ### [1.3.1](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.3.0...v1.3.1) (2020-07-04)
 
 #### Bug Fixes
