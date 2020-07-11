@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.4.3](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.4.2...v1.4.3) (2020-07-11)
+
+#### Bug Fixes
+
+* **Facade:** use extension method to set enum value ([f68fcfb](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/f68fcfb051f55312d56467a94b4798fe0a0b26d7))
+  > The SetSelectionMethod method now uses the Zinnia EnumExtensions helper method to set the value of the enum by the index instead of repeating the same logic.
+
 ### [1.4.2](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.4.1...v1.4.2) (2020-07-11)
 
 #### Miscellaneous Chores
