@@ -9,6 +9,7 @@
     using Zinnia.Action;
     using Zinnia.Cast;
     using Zinnia.Data.Attribute;
+    using Zinnia.Extension;
     using Zinnia.Pointer;
     using Zinnia.Rule;
 
@@ -119,7 +120,7 @@
         /// <param name="selectionMethodIndex">The index of the <see cref="SelectionType"/>.</param>
         public virtual void SetSelectionMethod(int selectionMethodIndex)
         {
-            SelectionMethod = (SelectionType)Mathf.Clamp(selectionMethodIndex, 0, System.Enum.GetValues(typeof(SelectionType)).Length);
+            SelectionMethod = EnumExtensions.GetByIndex<SelectionType>(selectionMethodIndex);
         }
 
         /// <summary>
