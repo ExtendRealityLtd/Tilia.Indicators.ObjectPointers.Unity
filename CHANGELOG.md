@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.4.6](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.4.5...v1.4.6) (2020-08-14)
+
+#### Miscellaneous Chores
+
+* **deps:** bump package dependencies ([cd06145](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/cd06145b1f7555d4c3e17893361d09bf9654c7a9))
+  > Bumps [io.extendreality.zinnia.unity](https://github.com/ExtendRealityLtd/Zinnia.Unity) from 1.21.0 to 1.22.0. - [Release notes](https://github.com/ExtendRealityLtd/Zinnia.Unity/releases) - [Changelog](https://github.com/ExtendRealityLtd/Zinnia.Unity/blob/master/CHANGELOG.md) - [Commits](ExtendRealityLtd/Zinnia.Unity@v1.21.0...v1.22.0)
+  > 
+  > Bumps [io.extendreality.tilia.mutators.objectfollower.unity](https://github.com/ExtendRealityLtd/Tilia.Mutators.ObjectFollower.Unity) from 1.1.4 to 1.1.5. - [Release notes](https://github.com/ExtendRealityLtd/Tilia.Mutators.ObjectFollower.Unity/releases) - [Changelog](https://github.com/ExtendRealityLtd/Tilia.Mutators.ObjectFollower.Unity/blob/master/CHANGELOG.md) - [Commits](ExtendRealityLtd/Tilia.Mutators.ObjectFollower.Unity@v1.1.4...v1.1.5)
+
 ### [1.4.5](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.4.4...v1.4.5) (2020-07-28)
 
 #### Miscellaneous Chores
