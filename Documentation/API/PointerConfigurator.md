@@ -21,6 +21,7 @@ Sets up the Pointer Prefab based on the provided user settings.
   * [ConfigureRaycastRules()]
   * [ConfigureSelectionAction()]
   * [ConfigureSelectionType()]
+  * [ConfigureTargetPointValidity()]
   * [ConfigureTargetValidity()]
   * [EmitActivated(ObjectPointer.EventData)]
   * [EmitDeactivated(ObjectPointer.EventData)]
@@ -143,7 +144,7 @@ public virtual void ConfigureFollowSources()
 
 #### ConfigureRaycastRules()
 
-Configures the physics raycast rules based on the facade settings.
+Configures the physics RayCast rules based on the facade settings.
 
 ##### Declaration
 
@@ -169,6 +170,16 @@ Configures the selection type based on the facade settings.
 
 ```
 public virtual void ConfigureSelectionType()
+```
+
+#### ConfigureTargetPointValidity()
+
+Configures the target point validity based on the facade settings.
+
+##### Declaration
+
+```
+public virtual void ConfigureTargetPointValidity()
 ```
 
 #### ConfigureTargetValidity()
@@ -305,6 +316,7 @@ protected virtual void OnEnable()
 [ConfigureRaycastRules()]: #ConfigureRaycastRules
 [ConfigureSelectionAction()]: #ConfigureSelectionAction
 [ConfigureSelectionType()]: #ConfigureSelectionType
+[ConfigureTargetPointValidity()]: #ConfigureTargetPointValidity
 [ConfigureTargetValidity()]: #ConfigureTargetValidity
 [EmitActivated(ObjectPointer.EventData)]: #EmitActivatedObjectPointer.EventData
 [EmitDeactivated(ObjectPointer.EventData)]: #EmitDeactivatedObjectPointer.EventData

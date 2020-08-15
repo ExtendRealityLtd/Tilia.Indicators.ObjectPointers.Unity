@@ -58,14 +58,23 @@
         [Serialized]
         [field: DocumentedByXml]
         public SelectionType SelectionMethod { get; set; }
+        #endregion
+
+        #region Restriction Settings
         /// <summary>
         /// Allows to optionally determine targets based on the set rules.
         /// </summary>
         [Serialized, Cleared]
-        [field: DocumentedByXml]
+        [field: Header("Restriction Settings"), DocumentedByXml]
         public RuleContainer TargetValidity { get; set; }
         /// <summary>
-        /// Allows to optionally define the rules for the raycast of the pointer beam elements.
+        /// Allows to optionally determine target point based on the set rules.
+        /// </summary>
+        [Serialized, Cleared]
+        [field: DocumentedByXml]
+        public RuleContainer TargetPointValidity { get; set; }
+        /// <summary>
+        /// Allows to optionally define the rules for the RayCast of the pointer beam elements.
         /// </summary>
         [Serialized, Cleared]
         [field: DocumentedByXml]
@@ -192,6 +201,15 @@
         protected virtual void OnAfterTargetValidityChange()
         {
             Configuration.ConfigureTargetValidity();
+        }
+
+        /// <summary>
+        /// Called after <see cref="TargetPointValidity"/> has been changed.
+        /// </summary>
+        [CalledAfterChangeOf(nameof(TargetPointValidity))]
+        protected virtual void OnAfterTargetPointValidityChange()
+        {
+            Configuration.ConfigureTargetPointValidity();
         }
 
         /// <summary>
