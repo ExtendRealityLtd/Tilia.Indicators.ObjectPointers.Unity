@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.5.0](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.4.8...v1.5.0) (2020-08-15)
+
+#### Features
+
+* **Facade:** add ability to restrict pointer by target point ([43ad919](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/43ad9192299c3000268710dd1d83e2779dc3f539))
+  > The Zinnia PointsCast now allows to restrict the target point of a cast to allow or deny certain points of space from being valid.
+  > 
+  > This is now used with the PointerFacade to allow a pointer to determine if the point in which the cursor is colliding with is valid based on a Rule.
+  > 
+  > It can be used in conjunction with the NavMeshRule to determine if the pointer is within the bounds of a NavMesh to consider it a valid target to select.
+
 ### [1.4.8](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.4.7...v1.4.8) (2020-08-15)
 
 #### Miscellaneous Chores
