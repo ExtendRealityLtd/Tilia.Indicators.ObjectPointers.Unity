@@ -21,6 +21,7 @@ The public interface into the Pointer Prefab.
   * [RaycastRules]
   * [SelectionAction]
   * [SelectionMethod]
+  * [TargetPointValidity]
   * [TargetValidity]
 * [Methods]
   * [Activate()]
@@ -30,6 +31,7 @@ The public interface into the Pointer Prefab.
   * [OnAfterRaycastRulesChange()]
   * [OnAfterSelectionActionChange()]
   * [OnAfterSelectionMethodChange()]
+  * [OnAfterTargetPointValidityChange()]
   * [OnAfterTargetValidityChange()]
   * [Select()]
   * [SetSelectionMethod(Int32)]
@@ -147,7 +149,7 @@ public GameObject FollowSource { get; set; }
 
 #### RaycastRules
 
-Allows to optionally define the rules for the raycast of the pointer beam elements.
+Allows to optionally define the rules for the RayCast of the pointer beam elements.
 
 ##### Declaration
 
@@ -173,6 +175,16 @@ The action moment when to initiate the select action.
 
 ```
 public PointerFacade.SelectionType SelectionMethod { get; set; }
+```
+
+#### TargetPointValidity
+
+Allows to optionally determine target point based on the set rules.
+
+##### Declaration
+
+```
+public RuleContainer TargetPointValidity { get; set; }
 ```
 
 #### TargetValidity
@@ -257,6 +269,16 @@ Called after [SelectionMethod] has been changed.
 protected virtual void OnAfterSelectionMethodChange()
 ```
 
+#### OnAfterTargetPointValidityChange()
+
+Called after [TargetPointValidity] has been changed.
+
+##### Declaration
+
+```
+protected virtual void OnAfterTargetPointValidityChange()
+```
+
 #### OnAfterTargetValidityChange()
 
 Called after [TargetValidity] has been changed.
@@ -300,6 +322,7 @@ public virtual void SetSelectionMethod(int selectionMethodIndex)
 [RaycastRules]: PointerFacade.md#RaycastRules
 [SelectionAction]: PointerFacade.md#SelectionAction
 [SelectionMethod]: PointerFacade.md#SelectionMethod
+[TargetPointValidity]: PointerFacade.md#TargetPointValidity
 [TargetValidity]: PointerFacade.md#TargetValidity
 [Selected]: PointerFacade.md#Selected
 [SelectionMethod]: PointerFacade.md#SelectionMethod
@@ -321,6 +344,7 @@ public virtual void SetSelectionMethod(int selectionMethodIndex)
 [RaycastRules]: #RaycastRules
 [SelectionAction]: #SelectionAction
 [SelectionMethod]: #SelectionMethod
+[TargetPointValidity]: #TargetPointValidity
 [TargetValidity]: #TargetValidity
 [Methods]: #Methods
 [Activate()]: #Activate
@@ -330,6 +354,7 @@ public virtual void SetSelectionMethod(int selectionMethodIndex)
 [OnAfterRaycastRulesChange()]: #OnAfterRaycastRulesChange
 [OnAfterSelectionActionChange()]: #OnAfterSelectionActionChange
 [OnAfterSelectionMethodChange()]: #OnAfterSelectionMethodChange
+[OnAfterTargetPointValidityChange()]: #OnAfterTargetPointValidityChange
 [OnAfterTargetValidityChange()]: #OnAfterTargetValidityChange
 [Select()]: #Select
 [SetSelectionMethod(Int32)]: #SetSelectionMethodInt32

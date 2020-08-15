@@ -81,7 +81,15 @@
         }
 
         /// <summary>
-        /// Configures the physics raycast rules based on the facade settings.
+        /// Configures the target point validity based on the facade settings.
+        /// </summary>
+        public virtual void ConfigureTargetPointValidity()
+        {
+            Caster.TargetPointValidity = Facade.TargetPointValidity;
+        }
+
+        /// <summary>
+        /// Configures the physics RayCast rules based on the facade settings.
         /// </summary>
         public virtual void ConfigureRaycastRules()
         {
@@ -208,6 +216,7 @@
         protected virtual void OnEnable()
         {
             ConfigureTargetValidity();
+            ConfigureTargetPointValidity();
             ConfigureRaycastRules();
             ConfigureFollowSources();
             ConfigureSelectionType();
