@@ -16,23 +16,23 @@ The Curved Pointer is a popular choice when creating a teleport locomotion featu
 
 ## Prerequisites
 
-* [Add the Tilia.CameraRigs.TrackedAlias.Unity] prefab to the scene Hierarchy.
-* [Add the Tilia.Input.UnityInputManager.ButtonAction] prefab to the scene Hierarchy.
+* [Add the Tilia.CameraRigs.SpatialSimulator.Unity -> CameraRigs.SpatialSimulator] prefab to the scene hierarchy.
+* [Add the Tilia.Input.UnityInputManager -> Input.UnityInputManager.ButtonAction] prefab to the scene hierarchy.
 * [Install the Tilia.Indicators.ObjectPointers.Unity] package dependency in to your [Unity] project.
 
 ## Let's Start
 
 ### Step 1
 
-Expand the `Tilia Indicators ObjectPointers Unity` Package directory in the Unity Project window and select the `Packages -> Tilia Indicators ObjectPointers Unity -> Runtime -> Prefabs` directory then drag and drop the `Indicators.ObjectPointers.Curved` prefab into the Unity Hierarchy window.
+Expand the `Tilia Indicators ObjectPointers Unity` package directory in the Unity Project window and select the `Packages -> Tilia Indicators ObjectPointers Unity -> Runtime -> Prefabs` directory then drag and drop the `Indicators.ObjectPointers.Curved` prefab into the Unity Hierarchy window.
 
 ![Adding Prefab To Scene](assets/images/AddingPrefabToScene.png)
 
 ### Step 2
 
-Select the `Indicators.ObjectPointers.Curved` prefab in the Unity Hierarchy and change the `Pointer Facade` component to configure the base functionality of the Pointer.
+The `Follow Source` property on the `Pointer Facade` component determines what GameObject the Pointer should follow in the scene.
 
-The `Follow Source` property determines what GameObject the Pointer should track in the scene, for example, if we want the Pointer to follow around the Right Controller GameObject then drag and drop the `CameraRigs.TrackedAlias -> Aliases -> RightControllerAlias` GameObject into the `Follow Source` property on the `Pointer Facade` component.
+If we want the Pointer to follow the Right Controller GameObject then we drag and drop the `CameraRigs.TrackedAlias -> Aliases -> RightControllerAlias` GameObject into the `Follow Source` property on the `Pointer Facade` component within the `Indicators.ObjectPointers.Curved` GameObject.
 
 ![Drag And Drop Right Controller Alias As Pointer Follow Source](assets/images/DragAndDropRightControllerAliasAsPointerFollowSource.png)
 
@@ -57,7 +57,7 @@ Play the Unity scene and press the `Space` key and the Curved Pointer will emit 
 
 ![Curved Pointer Activated In Scene](assets/images/CurvedPointerActivatedInScene.png)
 
-[Add the Tilia.CameraRigs.TrackedAlias.Unity]: https://github.com/ExtendRealityLtd/Tilia.CameraRigs.TrackedAlias.Unity/blob/master/Documentation/HowToGuides/AddingATrackedAlias/README.md
-[Add the Tilia.Input.UnityInputManager.ButtonAction]: https://github.com/ExtendRealityLtd/Tilia.Input.UnityInputManager/blob/master/Documentation/HowToGuides/UsingTheUnityButtonAction/README.md
+[Add the Tilia.CameraRigs.SpatialSimulator.Unity -> CameraRigs.SpatialSimulator]: https://github.com/ExtendRealityLtd/Tilia.CameraRigs.TrackedAlias.Unity/blob/master/Documentation/HowToGuides/AddingATrackedAlias/README.md
+[Add the Tilia.Input.UnityInputManager -> Input.UnityInputManager.ButtonAction]: https://github.com/ExtendRealityLtd/Tilia.Input.UnityInputManager/blob/master/Documentation/HowToGuides/UsingTheUnityButtonAction/README.md
 [Install the Tilia.Indicators.ObjectPointers.Unity]: ../Installation/README.md
 [Unity]: https://unity3d.com/
