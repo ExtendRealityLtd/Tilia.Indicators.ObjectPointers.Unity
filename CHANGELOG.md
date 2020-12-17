@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.6.0](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.5.11...v1.6.0) (2020-12-17)
+
+#### Features
+
+* **HowToGuides:** add guide for setting invalid target for pointer ([7bef51b](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/7bef51b67576c02bbcb4cd2f82c3f0e449deedf9))
+  > The new Setting Invalid Targets guide shows how to use a rule to determine which GameObjects are invalid (or valid) targets for the pointer.
+* **HowToGuides:** add guide of how to limit pointer to navmesh ([de1043e](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/de1043e3d71baf051fcf4fdaaa9919ad6e5a5a8c))
+  > The guide shows how to limit a pointer to the bounds of a Unity NavMesh by using the Zinnia NavMeshRule.
+* **HowToGuides:** add guide to show how to ignore colliders ([0e639b2](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/0e639b297d60d76fc79bd2e3e1b88b0860c6063b))
+  > The new Ignoring Colliders guide shows how to use a custom PhysicsCast component to get the pointer to ignore certain colliders.
+
 ### [1.5.11](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.5.10...v1.5.11) (2020-12-17)
 
 #### Miscellaneous Chores
