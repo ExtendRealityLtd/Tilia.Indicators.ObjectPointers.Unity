@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.6.3](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.6.2...v1.6.3) (2020-12-22)
+
+#### Bug Fixes
+
+* **HowToGuides:** provide correct worded link to package ([7257e2a](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/7257e2a2cb013ee9aa5cb3ebed355a3901049a2c))
+  > The link to the ObjectPointers package had a `Tilia` twice in the path whereas it only needs to have it in there once.
+
 ### [1.6.2](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.6.1...v1.6.2) (2020-12-21)
 
 #### Miscellaneous Chores
