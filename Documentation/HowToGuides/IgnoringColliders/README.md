@@ -16,7 +16,7 @@ We can achieve this by customizing the RayCast of the Object Pointer to determin
 
 ## Prerequisites
 
-* [Add the Tilia.Tilia.Indicators.ObjectPointers.Unity -> Indicators.ObjectPointers.Straight] prefab to the scene hierarchy.
+* [Add the Tilia.Indicators.ObjectPointers.Unity -> Indicators.ObjectPointers.Straight] prefab to the scene hierarchy.
 
 ## Let's Start
 
@@ -100,4 +100,4 @@ Play the Unity scene, activate the Object Pointer by pressing the `Space` key an
 
 ![Pointer Does Not Collide With Cube](assets/images/PointerDoesNotCollideWithCube.png)
 
-[Add the Tilia.Tilia.Indicators.ObjectPointers.Unity -> Indicators.ObjectPointers.Straight]: ../AddingAStraightPointer/README.md
+[Add the Tilia.Indicators.ObjectPointers.Unity -> Indicators.ObjectPointers.Straight]: ../AddingAStraightPointer/README.md
