@@ -16,7 +16,7 @@ We can achieve this by using the [Zinnia] rules to determine which targets are c
 
 ## Prerequisites
 
-* [Add the Tilia.Tilia.Indicators.ObjectPointers.Unity -> Indicators.ObjectPointers.Straight] prefab to the scene hierarchy.
+* [Add the Tilia.Indicators.ObjectPointers.Unity -> Indicators.ObjectPointers.Straight] prefab to the scene hierarchy.
 
 ## Let's Start
 
@@ -94,4 +94,4 @@ Play the Unity scene, activate the Object Pointer by pressing the `Space` key an
 ![Pointer Sees Cube As Invalid Target](assets/images/PointerSeesCubeAsInvalidTarget.png)
 
 [Zinnia]: https://github.com/ExtendRealityLtd/Zinnia.Unity
-[Add the Tilia.Tilia.Indicators.ObjectPointers.Unity -> Indicators.ObjectPointers.Straight]: ../AddingAStraightPointer/README.md
+[Add the Tilia.Indicators.ObjectPointers.Unity -> Indicators.ObjectPointers.Straight]: ../AddingAStraightPointer/README.md
