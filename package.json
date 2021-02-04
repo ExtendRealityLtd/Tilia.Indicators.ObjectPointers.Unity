@@ -2,7 +2,7 @@
     "name": "io.extendreality.tilia.indicators.objectpointers.unity",
     "displayName": "Tilia Indicators ObjectPointers Unity",
     "description": "Indicate points in world space with a collection of object based pointers for the Unity software.",
-    "version": "1.6.6",
+    "version": "1.6.7",
     "unity": "2018.3",
     "unityRelease": "10f1",
     "keywords": [
