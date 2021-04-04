@@ -26,9 +26,7 @@ We’ll set up a Straight Pointer on a controller that can be activated and deac
 
 ### Step 1
 
-Expand the `Tilia Indicators ObjectPointers Unity` package directory in the Unity Project window and select the `Packages -> Tilia Indicators ObjectPointers Unity -> Runtime -> Prefabs` directory then drag and drop the `Indicators.ObjectPointers.Straight` prefab into the Unity Hierarchy window.
-
-![Adding Prefab To Scene](assets/images/AddingPrefabToScene.png)
+Add a `Indicators.ObjectPointers.Straight` prefab to the Unity project hierarchy by selecting `GameObject -> Tilia -> Prefabs -> Indicators -> ObjectPointers-> Indicators.ObjectPointers.Straight` from the Unity main top menu.
 
 ### Step 2
 
