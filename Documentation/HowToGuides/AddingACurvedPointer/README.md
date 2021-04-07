@@ -24,9 +24,7 @@ The Curved Pointer is a popular choice when creating a teleport locomotion featu
 
 ### Step 1
 
-Expand the `Tilia Indicators ObjectPointers Unity` package directory in the Unity Project window and select the `Packages -> Tilia Indicators ObjectPointers Unity -> Runtime -> Prefabs` directory then drag and drop the `Indicators.ObjectPointers.Curved` prefab into the Unity Hierarchy window.
-
-![Adding Prefab To Scene](assets/images/AddingPrefabToScene.png)
+Add a `Indicators.ObjectPointers.Curved` prefab to the Unity project hierarchy by selecting `GameObject -> Tilia -> Prefabs -> Indicators -> ObjectPointers -> Indicators.ObjectPointers.Curved` from the Unity main top menu.
 
 ### Step 2
 
