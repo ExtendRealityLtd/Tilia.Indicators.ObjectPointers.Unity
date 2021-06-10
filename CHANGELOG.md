@@ -1,5 +1,14 @@
 # Changelog
 
+### [1.7.6](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.7.5...v1.7.6) (2021-06-10)
+
+#### Miscellaneous Chores
+
+* **deps:** bump io.extendreality.tilia.utilities.shaders.unity ([cc2230e](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/cc2230eedcc4a6aaa2b5d5b931f947c7bd956ec3))
+  > Bumps [io.extendreality.tilia.utilities.shaders.unity](https://github.com/ExtendRealityLtd/Tilia.Utilities.Shaders.Unity) from 1.1.0 to 1.2.0. - [Release notes](https://github.com/ExtendRealityLtd/Tilia.Utilities.Shaders.Unity/releases) - [Changelog](https://github.com/ExtendRealityLtd/Tilia.Utilities.Shaders.Unity/blob/master/CHANGELOG.md) - [Commits](https://github.com/ExtendRealityLtd/Tilia.Utilities.Shaders.Unity/compare/v1.1.0...v1.2.0)
+* **README.md:** update title logo to related-media repo ([c7c7248](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/c7c724891b0388c7c20bcbd0c86739afa6ca1a7b))
+  > The title logo is now located on the related-media repo.
+
 ### [1.7.5](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.7.4...v1.7.5) (2021-05-09)
 
 #### Miscellaneous Chores
