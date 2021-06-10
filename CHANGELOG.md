@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.7.8](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.7.7...v1.7.8) (2021-06-10)
+
+#### Miscellaneous Chores
+
+* **deps:** bump io.extendreality.tilia.mutators.objectfollower.unity ([1c66354](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/1c6635436c7285a0144ba5e83b094b55d3f683b0))
+  > Bumps [io.extendreality.tilia.mutators.objectfollower.unity](https://github.com/ExtendRealityLtd/Tilia.Mutators.ObjectFollower.Unity) from 1.2.2 to 1.2.3. - [Release notes](https://github.com/ExtendRealityLtd/Tilia.Mutators.ObjectFollower.Unity/releases) - [Changelog](https://github.com/ExtendRealityLtd/Tilia.Mutators.ObjectFollower.Unity/blob/master/CHANGELOG.md) - [Commits](https://github.com/ExtendRealityLtd/Tilia.Mutators.ObjectFollower.Unity/compare/v1.2.2...v1.2.3)
+
 ### [1.7.7](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.7.6...v1.7.7) (2021-06-10)
 
 #### Miscellaneous Chores
