@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.7.31](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.7.30...v1.7.31) (2022-02-14)
+
+#### Miscellaneous Chores
+
+* **deps:** bump io.extendreality.zinnia.unity from 1.45.0 to 1.46.0 ([48a52ae](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/48a52aecc56a3e6eea44e04ed2518383ccf64429))
+  > Bumps [io.extendreality.zinnia.unity](https://github.com/ExtendRealityLtd/Zinnia.Unity) from 1.45.0 to 1.46.0. - [Release notes](https://github.com/ExtendRealityLtd/Zinnia.Unity/releases) - [Changelog](https://github.com/ExtendRealityLtd/Zinnia.Unity/blob/master/CHANGELOG.md) - [Commits](https://github.com/ExtendRealityLtd/Zinnia.Unity/compare/v1.45.0...v1.46.0)
+
 ### [1.7.30](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v1.7.29...v1.7.30) (2022-02-05)
 
 #### Miscellaneous Chores
