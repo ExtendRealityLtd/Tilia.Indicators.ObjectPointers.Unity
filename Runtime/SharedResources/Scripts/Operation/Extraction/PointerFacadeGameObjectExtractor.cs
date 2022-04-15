@@ -1,9 +1,9 @@
 ﻿namespace Tilia.Indicators.ObjectPointers.Operation.Extraction
 {
-    using Malimbe.BehaviourStateRequirementMethod;
     using UnityEngine;
     using Zinnia.Data.Operation.Extraction;
     using Zinnia.Data.Type;
+    using Zinnia.Extension;
     using Zinnia.Pointer;
 
     /// <summary>
@@ -54,10 +54,9 @@
         /// Sets the <see cref="Source"/> based on given <see cref="SurfaceData"/>.
         /// </summary>
         /// <param name="source">The data that contains the source transform.</param>
-        [RequiresBehaviourState]
         public virtual void SetSource(SurfaceData source)
         {
-            if (source == null || source.Transform == null)
+            if (!this.IsValidState() || source == null || source.Transform == null)
             {
                 return;
             }

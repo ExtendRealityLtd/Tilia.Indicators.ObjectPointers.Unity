@@ -25,6 +25,12 @@ The public interface into the Pointer Prefab.
   * [TargetValidity]
 * [Methods]
   * [Activate()]
+  * [ClearActivationAction()]
+  * [ClearFollowSource()]
+  * [ClearRaycastRules()]
+  * [ClearSelectionAction()]
+  * [ClearTargetPointValidity()]
+  * [ClearTargetValidity()]
   * [Deactivate()]
   * [OnAfterActivationActionChange()]
   * [OnAfterFollowSourceChange()]
@@ -179,7 +185,7 @@ public PointerFacade.SelectionType SelectionMethod { get; set; }
 
 #### TargetPointValidity
 
-Allows to optionally determine target point based on the set rules.
+Allows to optionally determine a specific target point based on the set rules.
 
 ##### Declaration
 
@@ -207,6 +213,66 @@ The Activate method turns on the ObjectPointer.
 
 ```
 public virtual void Activate()
+```
+
+#### ClearActivationAction()
+
+Clears [ActivationAction].
+
+##### Declaration
+
+```
+public virtual void ClearActivationAction()
+```
+
+#### ClearFollowSource()
+
+Clears [FollowSource].
+
+##### Declaration
+
+```
+public virtual void ClearFollowSource()
+```
+
+#### ClearRaycastRules()
+
+Clears [RaycastRules].
+
+##### Declaration
+
+```
+public virtual void ClearRaycastRules()
+```
+
+#### ClearSelectionAction()
+
+Clears [SelectionAction].
+
+##### Declaration
+
+```
+public virtual void ClearSelectionAction()
+```
+
+#### ClearTargetPointValidity()
+
+Clears [TargetPointValidity].
+
+##### Declaration
+
+```
+public virtual void ClearTargetPointValidity()
+```
+
+#### ClearTargetValidity()
+
+Clears [TargetValidity].
+
+##### Declaration
+
+```
+public virtual void ClearTargetValidity()
 ```
 
 #### Deactivate()
@@ -321,6 +387,12 @@ public virtual void SetSelectionMethod(int selectionMethodIndex)
 [FollowSource]: PointerFacade.md#FollowSource
 [RaycastRules]: PointerFacade.md#RaycastRules
 [SelectionAction]: PointerFacade.md#SelectionAction
+[TargetPointValidity]: PointerFacade.md#TargetPointValidity
+[TargetValidity]: PointerFacade.md#TargetValidity
+[ActivationAction]: PointerFacade.md#ActivationAction
+[FollowSource]: PointerFacade.md#FollowSource
+[RaycastRules]: PointerFacade.md#RaycastRules
+[SelectionAction]: PointerFacade.md#SelectionAction
 [SelectionMethod]: PointerFacade.md#SelectionMethod
 [TargetPointValidity]: PointerFacade.md#TargetPointValidity
 [TargetValidity]: PointerFacade.md#TargetValidity
@@ -348,6 +420,12 @@ public virtual void SetSelectionMethod(int selectionMethodIndex)
 [TargetValidity]: #TargetValidity
 [Methods]: #Methods
 [Activate()]: #Activate
+[ClearActivationAction()]: #ClearActivationAction
+[ClearFollowSource()]: #ClearFollowSource
+[ClearRaycastRules()]: #ClearRaycastRules
+[ClearSelectionAction()]: #ClearSelectionAction
+[ClearTargetPointValidity()]: #ClearTargetPointValidity
+[ClearTargetValidity()]: #ClearTargetValidity
 [Deactivate()]: #Deactivate
 [OnAfterActivationActionChange()]: #OnAfterActivationActionChange
 [OnAfterFollowSourceChange()]: #OnAfterFollowSourceChange

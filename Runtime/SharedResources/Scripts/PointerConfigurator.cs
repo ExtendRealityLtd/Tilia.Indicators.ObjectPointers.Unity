@@ -1,7 +1,5 @@
 ﻿namespace Tilia.Indicators.ObjectPointers
 {
-    using Malimbe.PropertySerializationAttribute;
-    using Malimbe.XmlDocumentationAttribute;
     using UnityEngine;
     using Zinnia.Action;
     using Zinnia.Cast;
@@ -16,60 +14,149 @@
     public class PointerConfigurator : MonoBehaviour
     {
         #region Facade Settings
+        [Header("Facade Settings")]
+        [Tooltip("The public facade.")]
+        [SerializeField]
+        [Restricted]
+        private PointerFacade facade;
         /// <summary>
         /// The public facade.
         /// </summary>
-        [Serialized]
-        [field: Header("Facade Settings"), DocumentedByXml, Restricted]
-        public PointerFacade Facade { get; protected set; }
+        public PointerFacade Facade
+        {
+            get
+            {
+                return facade;
+            }
+            protected set
+            {
+                facade = value;
+            }
+        }
         #endregion
 
         #region Pointer Settings
+        [Header("Pointer Settings")]
+        [Tooltip("The ObjectPointer component for the Pointer.")]
+        [SerializeField]
+        [Restricted]
+        private ObjectPointer objectPointer;
         /// <summary>
         /// The <see cref="ObjectPointer"/> component for the Pointer.
         /// </summary>
-        [Serialized]
-        [field: Header("Pointer Settings"), DocumentedByXml, Restricted]
-        public ObjectPointer ObjectPointer { get; protected set; }
+        public ObjectPointer ObjectPointer
+        {
+            get
+            {
+                return objectPointer;
+            }
+            protected set
+            {
+                objectPointer = value;
+            }
+        }
         #endregion
 
         #region Object Follow Settings
+        [Header("Object Follow Settings")]
+        [Tooltip("The ObjectFollower component for the Pointer.")]
+        [SerializeField]
+        [Restricted]
+        private ObjectFollower objectFollow;
         /// <summary>
         /// The <see cref="ObjectFollower"/> component for the Pointer.
         /// </summary>
-        [Serialized]
-        [field: Header("Object Follow Settings"), DocumentedByXml, Restricted]
-        public ObjectFollower ObjectFollow { get; protected set; }
+        public ObjectFollower ObjectFollow
+        {
+            get
+            {
+                return objectFollow;
+            }
+            protected set
+            {
+                objectFollow = value;
+            }
+        }
         #endregion
 
         #region Cast Settings
+        [Header("Cast Settings")]
+        [Tooltip("The PointsCast component for the Pointer.")]
+        [SerializeField]
+        [Restricted]
+        private PointsCast caster;
         /// <summary>
         /// The <see cref="PointsCast"/> component for the Pointer.
         /// </summary>
-        [Serialized]
-        [field: Header("Cast Settings"), DocumentedByXml, Restricted]
-        public PointsCast Caster { get; protected set; }
+        public PointsCast Caster
+        {
+            get
+            {
+                return caster;
+            }
+            protected set
+            {
+                caster = value;
+            }
+        }
         #endregion
 
         #region Action Settings
+        [Header("Action Settings")]
+        [Tooltip("The BooleanAction that will activate/deactivate the pointer.")]
+        [SerializeField]
+        [Restricted]
+        private BooleanAction activationAction;
         /// <summary>
         /// The <see cref="BooleanAction"/> that will activate/deactivate the pointer.
         /// </summary>
-        [Serialized]
-        [field: Header("Action Settings"), DocumentedByXml, Restricted]
-        public BooleanAction ActivationAction { get; protected set; }
+        public BooleanAction ActivationAction
+        {
+            get
+            {
+                return activationAction;
+            }
+            protected set
+            {
+                activationAction = value;
+            }
+        }
+        [Tooltip("The BooleanAction that initiates the pointer selection when the action is activated.")]
+        [SerializeField]
+        [Restricted]
+        private BooleanAction selectOnActivatedAction;
         /// <summary>
         /// The <see cref="BooleanAction"/> that initiates the pointer selection when the action is activated.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted]
-        public BooleanAction SelectOnActivatedAction { get; protected set; }
+        public BooleanAction SelectOnActivatedAction
+        {
+            get
+            {
+                return selectOnActivatedAction;
+            }
+            protected set
+            {
+                selectOnActivatedAction = value;
+            }
+        }
+        [Tooltip("The BooleanAction that initiates the pointer selection when the action is deactivated.")]
+        [SerializeField]
+        [Restricted]
+        private BooleanAction selectOnDeactivatedAction;
         /// <summary>
         /// The <see cref="BooleanAction"/> that initiates the pointer selection when the action is deactivated.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml, Restricted]
-        public BooleanAction SelectOnDeactivatedAction { get; protected set; }
+        public BooleanAction SelectOnDeactivatedAction
+        {
+            get
+            {
+                return selectOnDeactivatedAction;
+            }
+            protected set
+            {
+                selectOnDeactivatedAction = value;
+            }
+        }
         #endregion
 
         /// <summary>
