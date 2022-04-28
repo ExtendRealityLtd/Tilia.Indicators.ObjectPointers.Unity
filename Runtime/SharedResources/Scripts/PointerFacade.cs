@@ -1,10 +1,5 @@
 ﻿namespace Tilia.Indicators.ObjectPointers
 {
-    using Malimbe.BehaviourStateRequirementMethod;
-    using Malimbe.MemberChangeMethod;
-    using Malimbe.MemberClearanceMethod;
-    using Malimbe.PropertySerializationAttribute;
-    using Malimbe.XmlDocumentationAttribute;
     using UnityEngine;
     using Zinnia.Action;
     using Zinnia.Cast;
@@ -34,94 +29,287 @@
         }
 
         #region Pointer Settings
+        [Header("Pointer Settings")]
+        [Tooltip("The source for the pointer origin to follow.")]
+        [SerializeField]
+        private GameObject followSource;
         /// <summary>
         /// The source for the pointer origin to follow.
         /// </summary>
-        [Serialized, Cleared]
-        [field: Header("Pointer Settings"), DocumentedByXml]
-        public GameObject FollowSource { get; set; }
+        public GameObject FollowSource
+        {
+            get
+            {
+                return followSource;
+            }
+            set
+            {
+                followSource = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterFollowSourceChange();
+                }
+            }
+        }
+        [Tooltip("The BooleanAction that will activate/deactivate the pointer.")]
+        [SerializeField]
+        private BooleanAction activationAction;
         /// <summary>
         /// The <see cref="BooleanAction"/> that will activate/deactivate the pointer.
         /// </summary>
-        [Serialized, Cleared]
-        [field: DocumentedByXml]
-        public BooleanAction ActivationAction { get; set; }
+        public BooleanAction ActivationAction
+        {
+            get
+            {
+                return activationAction;
+            }
+            set
+            {
+                activationAction = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterActivationActionChange();
+                }
+            }
+        }
+        [Tooltip("The BooleanAction that initiates the pointer selection.")]
+        [SerializeField]
+        private BooleanAction selectionAction;
         /// <summary>
         /// The <see cref="BooleanAction"/> that initiates the pointer selection.
         /// </summary>
-        [Serialized, Cleared]
-        [field: DocumentedByXml]
-        public BooleanAction SelectionAction { get; set; }
+        public BooleanAction SelectionAction
+        {
+            get
+            {
+                return selectionAction;
+            }
+            set
+            {
+                selectionAction = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterSelectionActionChange();
+                }
+            }
+        }
+        [Tooltip("The action moment when to initiate the select action.")]
+        [SerializeField]
+        private SelectionType selectionMethod = SelectionType.SelectOnActivate;
         /// <summary>
         /// The action moment when to initiate the select action.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml]
-        public SelectionType SelectionMethod { get; set; }
+        public SelectionType SelectionMethod
+        {
+            get
+            {
+                return selectionMethod;
+            }
+            set
+            {
+                selectionMethod = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterSelectionMethodChange();
+                }
+            }
+        }
         #endregion
 
         #region Restriction Settings
+        [Header("Restriction Settings")]
+        [Tooltip("Allows to optionally determine targets based on the set rules.")]
+        [SerializeField]
+        private RuleContainer targetValidity;
         /// <summary>
         /// Allows to optionally determine targets based on the set rules.
         /// </summary>
-        [Serialized, Cleared]
-        [field: Header("Restriction Settings"), DocumentedByXml]
-        public RuleContainer TargetValidity { get; set; }
+        public RuleContainer TargetValidity
+        {
+            get
+            {
+                return targetValidity;
+            }
+            set
+            {
+                targetValidity = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterTargetValidityChange();
+                }
+            }
+        }
+        [Tooltip("Allows to optionally determine a specific target point based on the set rules.")]
+        [SerializeField]
+        private RuleContainer targetPointValidity;
         /// <summary>
-        /// Allows to optionally determine target point based on the set rules.
+        /// Allows to optionally determine a specific target point based on the set rules.
         /// </summary>
-        [Serialized, Cleared]
-        [field: DocumentedByXml]
-        public RuleContainer TargetPointValidity { get; set; }
+        public RuleContainer TargetPointValidity
+        {
+            get
+            {
+                return targetPointValidity;
+            }
+            set
+            {
+                targetPointValidity = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterTargetPointValidityChange();
+                }
+            }
+        }
+        [Tooltip("Allows to optionally define the rules for the RayCast of the pointer beam elements.")]
+        [SerializeField]
+        private PhysicsCast raycastRules;
         /// <summary>
         /// Allows to optionally define the rules for the RayCast of the pointer beam elements.
         /// </summary>
-        [Serialized, Cleared]
-        [field: DocumentedByXml]
-        public PhysicsCast RaycastRules { get; set; }
+        public PhysicsCast RaycastRules
+        {
+            get
+            {
+                return raycastRules;
+            }
+            set
+            {
+                raycastRules = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterRaycastRulesChange();
+                }
+            }
+        }
         #endregion
 
         #region Pointer Events
         /// <summary>
         /// Emitted when the <see cref="ObjectPointer"/> becomes active.
         /// </summary>
-        [Header("Pointer Events"), DocumentedByXml]
+        [Header("Pointer Events")]
         public ObjectPointer.UnityEvent Activated = new ObjectPointer.UnityEvent();
         /// <summary>
         /// Emitted when the <see cref="ObjectPointer"/> is deactivated.
         /// </summary>
-        [DocumentedByXml]
         public ObjectPointer.UnityEvent Deactivated = new ObjectPointer.UnityEvent();
         /// <summary>
         /// Emitted when the <see cref="ObjectPointer"/> collides with a new target.
         /// </summary>
-        [DocumentedByXml]
         public ObjectPointer.UnityEvent Entered = new ObjectPointer.UnityEvent();
         /// <summary>
         /// Emitted when the <see cref="ObjectPointer"/> stops colliding with an existing target.
         /// </summary>
-        [DocumentedByXml]
         public ObjectPointer.UnityEvent Exited = new ObjectPointer.UnityEvent();
         /// <summary>
         /// Emitted when the <see cref="ObjectPointer"/> changes its hovering position over an existing target.
         /// </summary>
-        [DocumentedByXml]
         public ObjectPointer.UnityEvent HoverChanged = new ObjectPointer.UnityEvent();
         /// <summary>
         /// Emitted whenever <see cref="ObjectPointer.Select"/> is called.
         /// </summary>
-        [DocumentedByXml]
         public ObjectPointer.UnityEvent Selected = new ObjectPointer.UnityEvent();
         #endregion
 
         #region Reference Settings
+        [Header("Reference Settings")]
+        [Tooltip("The linked Internal Setup.")]
+        [SerializeField]
+        [Restricted]
+        private PointerConfigurator configuration;
         /// <summary>
         /// The linked Internal Setup.
         /// </summary>
-        [Serialized]
-        [field: Header("Reference Settings"), DocumentedByXml, Restricted]
-        public PointerConfigurator Configuration { get; protected set; }
+        public PointerConfigurator Configuration
+        {
+            get
+            {
+                return configuration;
+            }
+            protected set
+            {
+                configuration = value;
+            }
+        }
         #endregion
+
+        /// <summary>
+        /// Clears <see cref="FollowSource"/>.
+        /// </summary>
+        public virtual void ClearFollowSource()
+        {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
+            FollowSource = default;
+        }
+
+        /// <summary>
+        /// Clears <see cref="ActivationAction"/>.
+        /// </summary>
+        public virtual void ClearActivationAction()
+        {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
+            ActivationAction = default;
+        }
+
+        /// <summary>
+        /// Clears <see cref="SelectionAction"/>.
+        /// </summary>
+        public virtual void ClearSelectionAction()
+        {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
+            SelectionAction = default;
+        }
+
+        /// <summary>
+        /// Clears <see cref="TargetValidity"/>.
+        /// </summary>
+        public virtual void ClearTargetValidity()
+        {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
+            TargetValidity = default;
+        }
+
+        /// <summary>
+        /// Clears <see cref="TargetPointValidity"/>.
+        /// </summary>
+        public virtual void ClearTargetPointValidity()
+        {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
+            TargetPointValidity = default;
+        }
+
+        /// <summary>
+        /// Clears <see cref="RaycastRules"/>.
+        /// </summary>
+        public virtual void ClearRaycastRules()
+        {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
+            RaycastRules = default;
+        }
 
         /// <summary>
         /// Sets <see cref="SelectionMethod"/>.
@@ -135,9 +323,13 @@
         /// <summary>
         /// The Activate method turns on the <see cref="ObjectPointer"/>.
         /// </summary>
-        [RequiresBehaviourState]
         public virtual void Activate()
         {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
             Configuration.ObjectPointer.Activate();
         }
 
@@ -152,16 +344,19 @@
         /// <summary>
         /// Gets the current <see cref="ObjectPointer"/> state and emits it through <see cref="Selected"/>.
         /// </summary>
-        [RequiresBehaviourState]
         public virtual void Select()
         {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
             Configuration.ObjectPointer.Select();
         }
 
         /// <summary>
         /// Called after <see cref="FollowSource"/> has been changed.
         /// </summary>
-        [CalledAfterChangeOf(nameof(FollowSource))]
         protected virtual void OnAfterFollowSourceChange()
         {
             Configuration.ConfigureFollowSources();
@@ -170,7 +365,6 @@
         /// <summary>
         /// Called after <see cref="ActivationAction"/> has been changed.
         /// </summary>
-        [CalledAfterChangeOf(nameof(ActivationAction))]
         protected virtual void OnAfterActivationActionChange()
         {
             Configuration.ConfigureActivationAction();
@@ -179,7 +373,6 @@
         /// <summary>
         /// Called after <see cref="SelectionAction"/> has been changed.
         /// </summary>
-        [CalledAfterChangeOf(nameof(SelectionAction))]
         protected virtual void OnAfterSelectionActionChange()
         {
             Configuration.ConfigureSelectionAction();
@@ -188,7 +381,6 @@
         /// <summary>
         /// Called after <see cref="SelectionMethod"/> has been changed.
         /// </summary>
-        [CalledAfterChangeOf(nameof(SelectionMethod))]
         protected virtual void OnAfterSelectionMethodChange()
         {
             Configuration.ConfigureSelectionType();
@@ -197,7 +389,6 @@
         /// <summary>
         /// Called after <see cref="TargetValidity"/> has been changed.
         /// </summary>
-        [CalledAfterChangeOf(nameof(TargetValidity))]
         protected virtual void OnAfterTargetValidityChange()
         {
             Configuration.ConfigureTargetValidity();
@@ -206,7 +397,6 @@
         /// <summary>
         /// Called after <see cref="TargetPointValidity"/> has been changed.
         /// </summary>
-        [CalledAfterChangeOf(nameof(TargetPointValidity))]
         protected virtual void OnAfterTargetPointValidityChange()
         {
             Configuration.ConfigureTargetPointValidity();
@@ -215,7 +405,6 @@
         /// <summary>
         /// Called after <see cref="RaycastRules"/> has been changed.
         /// </summary>
-        [CalledAfterChangeOf(nameof(RaycastRules))]
         protected virtual void OnAfterRaycastRulesChange()
         {
             Configuration.ConfigureRaycastRules();

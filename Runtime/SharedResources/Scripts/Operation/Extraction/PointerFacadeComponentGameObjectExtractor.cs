@@ -1,8 +1,5 @@
 ﻿namespace Tilia.Indicators.ObjectPointers.Operation.Extraction
 {
-    using Malimbe.BehaviourStateRequirementMethod;
-    using Malimbe.PropertySerializationAttribute;
-    using Malimbe.XmlDocumentationAttribute;
     using UnityEngine;
     using Zinnia.Cast;
     using Zinnia.Data.Operation.Extraction;
@@ -37,12 +34,23 @@
             PointerElementDestination
         }
 
+        [Tooltip("The PointerComponentType to extract from the Source.")]
+        [SerializeField]
+        private PointerComponentType pointerComponent = PointerComponentType.Caster;
         /// <summary>
         /// The <see cref="PointerComponentType"/> to extract from the <see cref="Source"/>.
         /// </summary>
-        [Serialized]
-        [field: DocumentedByXml]
-        public PointerComponentType PointerComponent { get; set; } = PointerComponentType.Caster;
+        public PointerComponentType PointerComponent
+        {
+            get
+            {
+                return pointerComponent;
+            }
+            set
+            {
+                pointerComponent = value;
+            }
+        }
 
         /// <inheritdoc />
         protected override GameObject ExtractValue()
@@ -73,9 +81,13 @@
         /// Sets the <see cref="Source"/> based on a given <see cref="GameObject"/>.
         /// </summary>
         /// <param name="source">The data that contains the <see cref="PointerFacade"/> component.</param>
-        [RequiresBehaviourState]
         public virtual void SetSource(GameObject source)
         {
+            if (!this.IsValidState())
+            {
+                return;
+            }
+
             Source = source.TryGetComponent<PointerFacade>();
         }
     }
