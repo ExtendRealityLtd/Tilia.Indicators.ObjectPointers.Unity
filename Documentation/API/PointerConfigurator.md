@@ -29,6 +29,7 @@ Sets up the Pointer Prefab based on the provided user settings.
   * [EmitExited(ObjectPointer.EventData)]
   * [EmitHoverChanged(ObjectPointer.EventData)]
   * [EmitSelected(ObjectPointer.EventData)]
+  * [IsValidHover(ObjectPointer.EventData)]
   * [OnEnable()]
 
 ## Details
@@ -288,6 +289,28 @@ public virtual void EmitSelected(ObjectPointer.EventData eventData)
 | --- | --- | --- |
 | ObjectPointer.EventData | eventData | The data to emit. |
 
+#### IsValidHover(ObjectPointer.EventData)
+
+Determines whether the current event data is hovering over a valid target.
+
+##### Declaration
+
+```
+protected virtual bool IsValidHover(ObjectPointer.EventData eventData)
+```
+
+##### Parameters
+
+| Type | Name | Description |
+| --- | --- | --- |
+| ObjectPointer.EventData | eventData | The hover data. |
+
+##### Returns
+
+| Type | Description |
+| --- | --- |
+| System.Boolean | Whether the hover data is valid. |
+
 #### OnEnable()
 
 ##### Declaration
@@ -324,4 +347,5 @@ protected virtual void OnEnable()
 [EmitExited(ObjectPointer.EventData)]: #EmitExitedObjectPointer.EventData
 [EmitHoverChanged(ObjectPointer.EventData)]: #EmitHoverChangedObjectPointer.EventData
 [EmitSelected(ObjectPointer.EventData)]: #EmitSelectedObjectPointer.EventData
+[IsValidHover(ObjectPointer.EventData)]: #IsValidHoverObjectPointer.EventData
 [OnEnable()]: #OnEnable

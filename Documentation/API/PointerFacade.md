@@ -18,6 +18,7 @@ The public interface into the Pointer Prefab.
   * [ActivationAction]
   * [Configuration]
   * [FollowSource]
+  * [HoverValidity]
   * [RaycastRules]
   * [SelectionAction]
   * [SelectionMethod]
@@ -153,6 +154,16 @@ The source for the pointer origin to follow.
 public GameObject FollowSource { get; set; }
 ```
 
+#### HoverValidity
+
+Allows to optionally determine targets based on the set rules.
+
+##### Declaration
+
+```
+public RuleContainer HoverValidity { get; set; }
+```
+
 #### RaycastRules
 
 Allows to optionally define the rules for the RayCast of the pointer beam elements.
@@ -185,7 +196,7 @@ public PointerFacade.SelectionType SelectionMethod { get; set; }
 
 #### TargetPointValidity
 
-Allows to optionally determine a specific target point based on the set rules.
+Allows to optionally determine a specific selection target point based on the set rules.
 
 ##### Declaration
 
@@ -195,7 +206,7 @@ public RuleContainer TargetPointValidity { get; set; }
 
 #### TargetValidity
 
-Allows to optionally determine targets based on the set rules.
+Allows to optionally determine selection targets based on the set rules.
 
 ##### Declaration
 
@@ -413,6 +424,7 @@ public virtual void SetSelectionMethod(int selectionMethodIndex)
 [ActivationAction]: #ActivationAction
 [Configuration]: #Configuration
 [FollowSource]: #FollowSource
+[HoverValidity]: #HoverValidity
 [RaycastRules]: #RaycastRules
 [SelectionAction]: #SelectionAction
 [SelectionMethod]: #SelectionMethod

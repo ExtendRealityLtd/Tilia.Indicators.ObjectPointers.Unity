@@ -270,6 +270,11 @@
         /// <param name="eventData">The data to emit.</param>
         public virtual void EmitEntered(ObjectPointer.EventData eventData)
         {
+            if (!IsValidHover(eventData))
+            {
+                return;
+            }
+
             Facade.Entered?.Invoke(eventData);
         }
 
@@ -279,6 +284,11 @@
         /// <param name="eventData">The data to emit.</param>
         public virtual void EmitExited(ObjectPointer.EventData eventData)
         {
+            if (!IsValidHover(eventData))
+            {
+                return;
+            }
+
             Facade.Exited?.Invoke(eventData);
         }
 
@@ -288,6 +298,11 @@
         /// <param name="eventData">The data to emit.</param>
         public virtual void EmitHoverChanged(ObjectPointer.EventData eventData)
         {
+            if (!IsValidHover(eventData))
+            {
+                return;
+            }
+
             Facade.HoverChanged?.Invoke(eventData);
         }
 
@@ -307,6 +322,20 @@
             ConfigureRaycastRules();
             ConfigureFollowSources();
             ConfigureSelectionType();
+        }
+
+        /// <summary>
+        /// Determines whether the current event data is hovering over a valid target.
+        /// </summary>
+        /// <param name="eventData">The hover data.</param>
+        /// <returns>Whether the hover data is valid.</returns>
+        protected virtual bool IsValidHover(ObjectPointer.EventData eventData)
+        {
+            return eventData != null &&
+                eventData.CurrentPointsCastData != null &&
+                eventData.CurrentPointsCastData.HitData != null &&
+                eventData.CurrentPointsCastData.HitData.Value.transform != null &&
+                Facade.HoverValidity.Accepts(eventData.CurrentPointsCastData.HitData.Value.transform.gameObject);
         }
     }
 }
