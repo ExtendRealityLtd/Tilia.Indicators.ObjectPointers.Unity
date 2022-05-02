@@ -120,9 +120,26 @@
         [Header("Restriction Settings")]
         [Tooltip("Allows to optionally determine targets based on the set rules.")]
         [SerializeField]
-        private RuleContainer targetValidity;
+        private RuleContainer hoverValidity;
         /// <summary>
         /// Allows to optionally determine targets based on the set rules.
+        /// </summary>
+        public RuleContainer HoverValidity
+        {
+            get
+            {
+                return hoverValidity;
+            }
+            set
+            {
+                hoverValidity = value;
+            }
+        }
+        [Tooltip("Allows to optionally determine selection targets based on the set rules.")]
+        [SerializeField]
+        private RuleContainer targetValidity;
+        /// <summary>
+        /// Allows to optionally determine selection targets based on the set rules.
         /// </summary>
         public RuleContainer TargetValidity
         {
@@ -139,11 +156,11 @@
                 }
             }
         }
-        [Tooltip("Allows to optionally determine a specific target point based on the set rules.")]
+        [Tooltip("Allows to optionally determine a specific selection target point based on the set rules.")]
         [SerializeField]
         private RuleContainer targetPointValidity;
         /// <summary>
-        /// Allows to optionally determine a specific target point based on the set rules.
+        /// Allows to optionally determine a specific selection target point based on the set rules.
         /// </summary>
         public RuleContainer TargetPointValidity
         {
