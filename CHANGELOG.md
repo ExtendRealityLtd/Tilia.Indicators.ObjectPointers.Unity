@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v2.0.3...v2.1.0) (2022-05-02)
+
+#### Features
+
+* **Facade:** add hover validity setting ([7235344](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/72353446baf5860468e3cd12fe68fd960ba3d507))
+  > The new Hover Validity restriction setting can be used to determine which objects can be considered valid for hover actions such as entered, exitit and hover changed. The Rule will simply block the Facade events from emitting and won't change any internal states.
+
 ### [2.0.3](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v2.0.2...v2.0.3) (2022-04-28)
 
 #### Miscellaneous Chores
