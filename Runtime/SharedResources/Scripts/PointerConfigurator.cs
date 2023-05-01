@@ -28,7 +28,7 @@
             {
                 return facade;
             }
-            protected set
+            set
             {
                 facade = value;
             }
@@ -50,7 +50,7 @@
             {
                 return objectPointer;
             }
-            protected set
+            set
             {
                 objectPointer = value;
             }
@@ -72,7 +72,7 @@
             {
                 return objectFollow;
             }
-            protected set
+            set
             {
                 objectFollow = value;
             }
@@ -94,7 +94,7 @@
             {
                 return caster;
             }
-            protected set
+            set
             {
                 caster = value;
             }
@@ -116,7 +116,7 @@
             {
                 return activationAction;
             }
-            protected set
+            set
             {
                 activationAction = value;
             }
@@ -134,7 +134,7 @@
             {
                 return selectOnActivatedAction;
             }
-            protected set
+            set
             {
                 selectOnActivatedAction = value;
             }
@@ -152,7 +152,7 @@
             {
                 return selectOnDeactivatedAction;
             }
-            protected set
+            set
             {
                 selectOnDeactivatedAction = value;
             }
@@ -188,12 +188,7 @@
         /// </summary>
         public virtual void ConfigureFollowSources()
         {
-            ObjectFollow.Sources.RunWhenActiveAndEnabled(() => ObjectFollow.Sources.Clear());
-
-            if (Facade.FollowSource != null)
-            {
-                ObjectFollow.Sources.RunWhenActiveAndEnabled(() => ObjectFollow.Sources.Add(Facade.FollowSource));
-            }
+            ObjectFollow.Sources.RunWhenActiveAndEnabled(() => SetFollowSource());
         }
 
         /// <summary>
@@ -201,14 +196,7 @@
         /// </summary>
         public virtual void ConfigureSelectionAction()
         {
-            SelectOnActivatedAction.RunWhenActiveAndEnabled(() => SelectOnActivatedAction.ClearSources());
-            SelectOnDeactivatedAction.RunWhenActiveAndEnabled(() => SelectOnDeactivatedAction.ClearSources());
-
-            if (Facade.SelectionAction != null)
-            {
-                SelectOnActivatedAction.RunWhenActiveAndEnabled(() => SelectOnActivatedAction.AddSource(Facade.SelectionAction));
-                SelectOnDeactivatedAction.RunWhenActiveAndEnabled(() => SelectOnDeactivatedAction.AddSource(Facade.SelectionAction));
-            }
+            SelectOnActivatedAction.RunWhenActiveAndEnabled(() => SetSelectionAction());
         }
 
         /// <summary>
@@ -216,12 +204,7 @@
         /// </summary>
         public virtual void ConfigureActivationAction()
         {
-            ActivationAction.RunWhenActiveAndEnabled(() => ActivationAction.ClearSources());
-
-            if (Facade.ActivationAction != null)
-            {
-                ActivationAction.RunWhenActiveAndEnabled(() => ActivationAction.AddSource(Facade.ActivationAction));
-            }
+            ActivationAction.RunWhenActiveAndEnabled(() => SetActivationAction());
         }
 
         /// <summary>
@@ -322,6 +305,44 @@
             ConfigureRaycastRules();
             ConfigureFollowSources();
             ConfigureSelectionType();
+        }
+
+        /// <summary>
+        /// Sets the follow source.
+        /// </summary>
+        protected virtual void SetFollowSource()
+        {
+            ObjectFollow.Sources.Clear();
+            if (Facade.FollowSource != null)
+            {
+                ObjectFollow.Sources.Add(Facade.FollowSource);
+            }
+        }
+
+        /// <summary>
+        /// Sets the activation action.
+        /// </summary>
+        protected virtual void SetActivationAction()
+        {
+            ActivationAction.ClearSources();
+            if (Facade.ActivationAction != null)
+            {
+                ActivationAction.AddSource(Facade.ActivationAction);
+            }
+        }
+
+        /// <summary>
+        /// Sets the selection action.
+        /// </summary>
+        protected virtual void SetSelectionAction()
+        {
+            SelectOnActivatedAction.ClearSources();
+            SelectOnDeactivatedAction.ClearSources();
+            if (Facade.SelectionAction != null)
+            {
+                SelectOnActivatedAction.AddSource(Facade.SelectionAction);
+                SelectOnDeactivatedAction.AddSource(Facade.SelectionAction);
+            }
         }
 
         /// <summary>
