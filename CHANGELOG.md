@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.2.1](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v2.2.0...v2.2.1) (2023-05-02)
+
+#### Bug Fixes
+
+* **Configuration:** re-apply select on deactivate action ([9c26e2a](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/9c26e2a8ca4bb07288750567ead8545953c917d9))
+  > The change to the run when enabled logic broke the select on deactive action as the code to set it up was never being run.
+
 ## [2.2.0](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v2.1.29...v2.2.0) (2023-05-02)
 
 #### Features
