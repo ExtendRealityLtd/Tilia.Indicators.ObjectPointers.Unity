@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.2.0](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v2.1.29...v2.2.0) (2023-05-02)
+
+#### Features
+
+* **Facade:** expose new point cast restriction options ([2173f24](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/2173f2430d8d17f633b6754443b62abcb60d1024))
+  > The PointsCast now provides a CursorLockThreshold and TransitionDuration option which is now exposed on the PointerFacade to allow these options to be set.
+
+#### Bug Fixes
+
+* **Configuration:** ensure setup is run correctly on enable ([f514b3d](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/commit/f514b3daf264b8708904638147823a1df632d200))
+  > The RunWhenActiveAndEnabled logic could cause an issue where it was hitting race conditions and not setting up correctly. This is now handled by calling a single method rather than queuing methods.
+  > 
+  > The configuration now also disables the points caster instead of the moment processor that controls the points caster, so the relevant setup is run correctly whenever the pointer is activated.
+  > 
+  > The Facade and Configuration reference fields are also now public to allow manual creation if required.
+
 ### [2.1.29](https://github.com/ExtendRealityLtd/Tilia.Indicators.ObjectPointers.Unity/compare/v2.1.28...v2.1.29) (2023-05-02)
 
 #### Miscellaneous Chores
