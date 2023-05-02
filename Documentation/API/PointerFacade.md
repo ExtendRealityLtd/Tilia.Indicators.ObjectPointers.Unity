@@ -17,6 +17,7 @@ The public interface into the Pointer Prefab.
 * [Properties]
   * [ActivationAction]
   * [Configuration]
+  * [CursorLockThreshold]
   * [FollowSource]
   * [HoverValidity]
   * [RaycastRules]
@@ -24,6 +25,7 @@ The public interface into the Pointer Prefab.
   * [SelectionMethod]
   * [TargetPointValidity]
   * [TargetValidity]
+  * [TransitionDuration]
 * [Methods]
   * [Activate()]
   * [ClearActivationAction()]
@@ -34,12 +36,14 @@ The public interface into the Pointer Prefab.
   * [ClearTargetValidity()]
   * [Deactivate()]
   * [OnAfterActivationActionChange()]
+  * [OnAfterCursorLockThresholdChange()]
   * [OnAfterFollowSourceChange()]
   * [OnAfterRaycastRulesChange()]
   * [OnAfterSelectionActionChange()]
   * [OnAfterSelectionMethodChange()]
   * [OnAfterTargetPointValidityChange()]
   * [OnAfterTargetValidityChange()]
+  * [OnAfterTransitionDurationChange()]
   * [Select()]
   * [SetSelectionMethod(Int32)]
 
@@ -141,7 +145,17 @@ The linked Internal Setup.
 ##### Declaration
 
 ```
-public PointerConfigurator Configuration { get; protected set; }
+public PointerConfigurator Configuration { get; set; }
+```
+
+#### CursorLockThreshold
+
+The amount of distance the cursor has to move before the destination of the cursor is updated to a new position.
+
+##### Declaration
+
+```
+public float CursorLockThreshold { get; set; }
 ```
 
 #### FollowSource
@@ -212,6 +226,16 @@ Allows to optionally determine selection targets based on the set rules.
 
 ```
 public RuleContainer TargetValidity { get; set; }
+```
+
+#### TransitionDuration
+
+The duration it takes to transition previous destination point to the current actual target point.
+
+##### Declaration
+
+```
+public float TransitionDuration { get; set; }
 ```
 
 ### Methods
@@ -306,6 +330,16 @@ Called after [ActivationAction] has been changed.
 protected virtual void OnAfterActivationActionChange()
 ```
 
+#### OnAfterCursorLockThresholdChange()
+
+Called after [CursorLockThreshold] has been changed.
+
+##### Declaration
+
+```
+protected virtual void OnAfterCursorLockThresholdChange()
+```
+
 #### OnAfterFollowSourceChange()
 
 Called after [FollowSource] has been changed.
@@ -366,6 +400,16 @@ Called after [TargetValidity] has been changed.
 protected virtual void OnAfterTargetValidityChange()
 ```
 
+#### OnAfterTransitionDurationChange()
+
+Called after [TransitionDuration] has been changed.
+
+##### Declaration
+
+```
+protected virtual void OnAfterTransitionDurationChange()
+```
+
 #### Select()
 
 Gets the current ObjectPointer state and emits it through [Selected].
@@ -401,12 +445,14 @@ public virtual void SetSelectionMethod(int selectionMethodIndex)
 [TargetPointValidity]: PointerFacade.md#TargetPointValidity
 [TargetValidity]: PointerFacade.md#TargetValidity
 [ActivationAction]: PointerFacade.md#ActivationAction
+[CursorLockThreshold]: PointerFacade.md#CursorLockThreshold
 [FollowSource]: PointerFacade.md#FollowSource
 [RaycastRules]: PointerFacade.md#RaycastRules
 [SelectionAction]: PointerFacade.md#SelectionAction
 [SelectionMethod]: PointerFacade.md#SelectionMethod
 [TargetPointValidity]: PointerFacade.md#TargetPointValidity
 [TargetValidity]: PointerFacade.md#TargetValidity
+[TransitionDuration]: PointerFacade.md#TransitionDuration
 [Selected]: PointerFacade.md#Selected
 [SelectionMethod]: PointerFacade.md#SelectionMethod
 [PointerFacade.SelectionType]: PointerFacade.SelectionType.md
@@ -423,6 +469,7 @@ public virtual void SetSelectionMethod(int selectionMethodIndex)
 [Properties]: #Properties
 [ActivationAction]: #ActivationAction
 [Configuration]: #Configuration
+[CursorLockThreshold]: #CursorLockThreshold
 [FollowSource]: #FollowSource
 [HoverValidity]: #HoverValidity
 [RaycastRules]: #RaycastRules
@@ -430,6 +477,7 @@ public virtual void SetSelectionMethod(int selectionMethodIndex)
 [SelectionMethod]: #SelectionMethod
 [TargetPointValidity]: #TargetPointValidity
 [TargetValidity]: #TargetValidity
+[TransitionDuration]: #TransitionDuration
 [Methods]: #Methods
 [Activate()]: #Activate
 [ClearActivationAction()]: #ClearActivationAction
@@ -440,11 +488,13 @@ public virtual void SetSelectionMethod(int selectionMethodIndex)
 [ClearTargetValidity()]: #ClearTargetValidity
 [Deactivate()]: #Deactivate
 [OnAfterActivationActionChange()]: #OnAfterActivationActionChange
+[OnAfterCursorLockThresholdChange()]: #OnAfterCursorLockThresholdChange
 [OnAfterFollowSourceChange()]: #OnAfterFollowSourceChange
 [OnAfterRaycastRulesChange()]: #OnAfterRaycastRulesChange
 [OnAfterSelectionActionChange()]: #OnAfterSelectionActionChange
 [OnAfterSelectionMethodChange()]: #OnAfterSelectionMethodChange
 [OnAfterTargetPointValidityChange()]: #OnAfterTargetPointValidityChange
 [OnAfterTargetValidityChange()]: #OnAfterTargetValidityChange
+[OnAfterTransitionDurationChange()]: #OnAfterTransitionDurationChange
 [Select()]: #Select
 [SetSelectionMethod(Int32)]: #SetSelectionMethodInt32

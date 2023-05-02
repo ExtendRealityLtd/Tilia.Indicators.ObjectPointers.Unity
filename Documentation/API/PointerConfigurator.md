@@ -17,12 +17,14 @@ Sets up the Pointer Prefab based on the provided user settings.
   * [SelectOnDeactivatedAction]
 * [Methods]
   * [ConfigureActivationAction()]
+  * [ConfigureCursorLockThreshold()]
   * [ConfigureFollowSources()]
   * [ConfigureRaycastRules()]
   * [ConfigureSelectionAction()]
   * [ConfigureSelectionType()]
   * [ConfigureTargetPointValidity()]
   * [ConfigureTargetValidity()]
+  * [ConfigureTransitionDuration()]
   * [EmitActivated(ObjectPointer.EventData)]
   * [EmitDeactivated(ObjectPointer.EventData)]
   * [EmitEntered(ObjectPointer.EventData)]
@@ -31,6 +33,9 @@ Sets up the Pointer Prefab based on the provided user settings.
   * [EmitSelected(ObjectPointer.EventData)]
   * [IsValidHover(ObjectPointer.EventData)]
   * [OnEnable()]
+  * [SetActivationAction()]
+  * [SetFollowSource()]
+  * [SetSelectionAction()]
 
 ## Details
 
@@ -58,7 +63,7 @@ The BooleanAction that will activate/deactivate the pointer.
 ##### Declaration
 
 ```
-public BooleanAction ActivationAction { get; protected set; }
+public BooleanAction ActivationAction { get; set; }
 ```
 
 #### Caster
@@ -68,7 +73,7 @@ The PointsCast component for the Pointer.
 ##### Declaration
 
 ```
-public PointsCast Caster { get; protected set; }
+public PointsCast Caster { get; set; }
 ```
 
 #### Facade
@@ -78,7 +83,7 @@ The public facade.
 ##### Declaration
 
 ```
-public PointerFacade Facade { get; protected set; }
+public PointerFacade Facade { get; set; }
 ```
 
 #### ObjectFollow
@@ -88,7 +93,7 @@ The ObjectFollower component for the Pointer.
 ##### Declaration
 
 ```
-public ObjectFollower ObjectFollow { get; protected set; }
+public ObjectFollower ObjectFollow { get; set; }
 ```
 
 #### ObjectPointer
@@ -98,7 +103,7 @@ The [ObjectPointer] component for the Pointer.
 ##### Declaration
 
 ```
-public ObjectPointer ObjectPointer { get; protected set; }
+public ObjectPointer ObjectPointer { get; set; }
 ```
 
 #### SelectOnActivatedAction
@@ -108,7 +113,7 @@ The BooleanAction that initiates the pointer selection when the action is activa
 ##### Declaration
 
 ```
-public BooleanAction SelectOnActivatedAction { get; protected set; }
+public BooleanAction SelectOnActivatedAction { get; set; }
 ```
 
 #### SelectOnDeactivatedAction
@@ -118,7 +123,7 @@ The BooleanAction that initiates the pointer selection when the action is deacti
 ##### Declaration
 
 ```
-public BooleanAction SelectOnDeactivatedAction { get; protected set; }
+public BooleanAction SelectOnDeactivatedAction { get; set; }
 ```
 
 ### Methods
@@ -131,6 +136,16 @@ Configures the activation action based on the facade settings.
 
 ```
 public virtual void ConfigureActivationAction()
+```
+
+#### ConfigureCursorLockThreshold()
+
+Configures the cursor lock threshold based on the facade settings.
+
+##### Declaration
+
+```
+public virtual void ConfigureCursorLockThreshold()
 ```
 
 #### ConfigureFollowSources()
@@ -191,6 +206,16 @@ Configures the target validity based on the facade settings.
 
 ```
 public virtual void ConfigureTargetValidity()
+```
+
+#### ConfigureTransitionDuration()
+
+Configures the transition duration based on the facade settings.
+
+##### Declaration
+
+```
+public virtual void ConfigureTransitionDuration()
 ```
 
 #### EmitActivated(ObjectPointer.EventData)
@@ -319,6 +344,36 @@ protected virtual bool IsValidHover(ObjectPointer.EventData eventData)
 protected virtual void OnEnable()
 ```
 
+#### SetActivationAction()
+
+Sets the activation action.
+
+##### Declaration
+
+```
+protected virtual void SetActivationAction()
+```
+
+#### SetFollowSource()
+
+Sets the follow source.
+
+##### Declaration
+
+```
+protected virtual void SetFollowSource()
+```
+
+#### SetSelectionAction()
+
+Sets the selection action.
+
+##### Declaration
+
+```
+protected virtual void SetSelectionAction()
+```
+
 [Tilia.Indicators.ObjectPointers]: README.md
 [PointerFacade]: PointerFacade.md
 [ObjectPointer]: PointerConfigurator.md#ObjectPointer
@@ -335,12 +390,14 @@ protected virtual void OnEnable()
 [SelectOnDeactivatedAction]: #SelectOnDeactivatedAction
 [Methods]: #Methods
 [ConfigureActivationAction()]: #ConfigureActivationAction
+[ConfigureCursorLockThreshold()]: #ConfigureCursorLockThreshold
 [ConfigureFollowSources()]: #ConfigureFollowSources
 [ConfigureRaycastRules()]: #ConfigureRaycastRules
 [ConfigureSelectionAction()]: #ConfigureSelectionAction
 [ConfigureSelectionType()]: #ConfigureSelectionType
 [ConfigureTargetPointValidity()]: #ConfigureTargetPointValidity
 [ConfigureTargetValidity()]: #ConfigureTargetValidity
+[ConfigureTransitionDuration()]: #ConfigureTransitionDuration
 [EmitActivated(ObjectPointer.EventData)]: #EmitActivatedObjectPointer.EventData
 [EmitDeactivated(ObjectPointer.EventData)]: #EmitDeactivatedObjectPointer.EventData
 [EmitEntered(ObjectPointer.EventData)]: #EmitEnteredObjectPointer.EventData
@@ -349,3 +406,6 @@ protected virtual void OnEnable()
 [EmitSelected(ObjectPointer.EventData)]: #EmitSelectedObjectPointer.EventData
 [IsValidHover(ObjectPointer.EventData)]: #IsValidHoverObjectPointer.EventData
 [OnEnable()]: #OnEnable
+[SetActivationAction()]: #SetActivationAction
+[SetFollowSource()]: #SetFollowSource
+[SetSelectionAction()]: #SetSelectionAction

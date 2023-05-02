@@ -62,8 +62,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1049360713950390315
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,8 +124,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1322672732093859771
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,39 +174,31 @@ MonoBehaviour:
   activationAction: {fileID: 0}
   selectionAction: {fileID: 0}
   selectionMethod: 0
+  hoverValidity:
+    field: {fileID: 0}
   targetValidity:
+    field: {fileID: 0}
+  targetPointValidity:
     field: {fileID: 0}
   raycastRules: {fileID: 0}
   Activated:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Zinnia.Pointer.ObjectPointer+UnityEvent, Zinnia.Runtime, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   Deactivated:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Zinnia.Pointer.ObjectPointer+UnityEvent, Zinnia.Runtime, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   Entered:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Zinnia.Pointer.ObjectPointer+UnityEvent, Zinnia.Runtime, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   Exited:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Zinnia.Pointer.ObjectPointer+UnityEvent, Zinnia.Runtime, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   HoverChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Zinnia.Pointer.ObjectPointer+UnityEvent, Zinnia.Runtime, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   Selected:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Zinnia.Pointer.ObjectPointer+UnityEvent, Zinnia.Runtime, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   configuration: {fileID: 4343749830990373068}
 --- !u!1 &2136928724051588258
 GameObject:
@@ -274,8 +262,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &5958135262489829195
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +343,10 @@ MonoBehaviour:
   physicsCast: {fileID: 0}
   targetValidity:
     field: {fileID: 0}
+  targetPointValidity:
+    field: {fileID: 0}
+  cursorLockThreshold: 0
+  transitionDuration: 0
   ResultsChanged:
     m_PersistentCalls:
       m_Calls:
@@ -393,8 +383,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: Zinnia.Cast.PointsCast+UnityEvent, Zinnia.Runtime, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   maximumLength: {x: 10, y: Infinity}
   heightLimitAngle: 100
   segmentCount: 10
@@ -540,11 +528,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1977522402952244861}
     m_Modifications:
-    - target: {fileID: 8955150999620452189, guid: b5bcf67f1f80d1a4f800327247af655a,
-        type: 3}
-      propertyPath: m_Name
-      value: ObjectPointer.Internal
-      objectReference: {fileID: 0}
     - target: {fileID: 333590899294449391, guid: b5bcf67f1f80d1a4f800327247af655a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -600,16 +583,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6670911739145006535, guid: b5bcf67f1f80d1a4f800327247af655a,
-        type: 3}
-      propertyPath: caster
-      value: 
-      objectReference: {fileID: 8391352710448912418}
-    - target: {fileID: 6670911739145006535, guid: b5bcf67f1f80d1a4f800327247af655a,
-        type: 3}
-      propertyPath: facade
-      value: 
-      objectReference: {fileID: 2402421270702372836}
     - target: {fileID: 1639799280548245475, guid: b5bcf67f1f80d1a4f800327247af655a,
         type: 3}
       propertyPath: Appeared.m_PersistentCalls.m_Calls.Array.size
@@ -659,12 +632,12 @@ PrefabInstance:
         type: 3}
       propertyPath: Appeared.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 3625605995097417382}
+      objectReference: {fileID: 8391352710448912418}
     - target: {fileID: 1639799280548245475, guid: b5bcf67f1f80d1a4f800327247af655a,
         type: 3}
       propertyPath: Disappeared.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 3625605995097417382}
+      objectReference: {fileID: 8391352710448912418}
     - target: {fileID: 1639799280548245475, guid: b5bcf67f1f80d1a4f800327247af655a,
         type: 3}
       propertyPath: Appeared.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -705,6 +678,21 @@ PrefabInstance:
       propertyPath: elements.Array.data[1]
       value: 
       objectReference: {fileID: 3625605995097417382}
+    - target: {fileID: 6670911739145006535, guid: b5bcf67f1f80d1a4f800327247af655a,
+        type: 3}
+      propertyPath: caster
+      value: 
+      objectReference: {fileID: 8391352710448912418}
+    - target: {fileID: 6670911739145006535, guid: b5bcf67f1f80d1a4f800327247af655a,
+        type: 3}
+      propertyPath: facade
+      value: 
+      objectReference: {fileID: 2402421270702372836}
+    - target: {fileID: 8955150999620452189, guid: b5bcf67f1f80d1a4f800327247af655a,
+        type: 3}
+      propertyPath: m_Name
+      value: ObjectPointer.Internal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5bcf67f1f80d1a4f800327247af655a, type: 3}
 --- !u!4 &7240355207293379556 stripped
