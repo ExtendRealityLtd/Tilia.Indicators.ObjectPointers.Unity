@@ -35,7 +35,8 @@ Sets up the Pointer Prefab based on the provided user settings.
   * [OnEnable()]
   * [SetActivationAction()]
   * [SetFollowSource()]
-  * [SetSelectionAction()]
+  * [SetSelectionOnActivatedAction()]
+  * [SetSelectionOnDeactivatedAction()]
 
 ## Details
 
@@ -364,14 +365,24 @@ Sets the follow source.
 protected virtual void SetFollowSource()
 ```
 
-#### SetSelectionAction()
+#### SetSelectionOnActivatedAction()
 
-Sets the selection action.
+Sets the selection action on activated.
 
 ##### Declaration
 
 ```
-protected virtual void SetSelectionAction()
+protected virtual void SetSelectionOnActivatedAction()
+```
+
+#### SetSelectionOnDeactivatedAction()
+
+Sets the selection action on deactivated.
+
+##### Declaration
+
+```
+protected virtual void SetSelectionOnDeactivatedAction()
 ```
 
 [Tilia.Indicators.ObjectPointers]: README.md
@@ -408,4 +419,5 @@ protected virtual void SetSelectionAction()
 [OnEnable()]: #OnEnable
 [SetActivationAction()]: #SetActivationAction
 [SetFollowSource()]: #SetFollowSource
-[SetSelectionAction()]: #SetSelectionAction
+[SetSelectionOnActivatedAction()]: #SetSelectionOnActivatedAction
+[SetSelectionOnDeactivatedAction()]: #SetSelectionOnDeactivatedAction

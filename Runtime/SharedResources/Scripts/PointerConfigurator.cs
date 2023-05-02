@@ -212,7 +212,8 @@
         /// </summary>
         public virtual void ConfigureSelectionAction()
         {
-            SelectOnActivatedAction.RunWhenActiveAndEnabled(() => SetSelectionAction());
+            SelectOnActivatedAction.RunWhenActiveAndEnabled(() => SetSelectionOnActivatedAction());
+            SelectOnDeactivatedAction.RunWhenActiveAndEnabled(() => SetSelectionOnDeactivatedAction());
         }
 
         /// <summary>
@@ -350,15 +351,25 @@
         }
 
         /// <summary>
-        /// Sets the selection action.
+        /// Sets the selection action on activated.
         /// </summary>
-        protected virtual void SetSelectionAction()
+        protected virtual void SetSelectionOnActivatedAction()
         {
             SelectOnActivatedAction.ClearSources();
-            SelectOnDeactivatedAction.ClearSources();
             if (Facade.SelectionAction != null)
             {
                 SelectOnActivatedAction.AddSource(Facade.SelectionAction);
+            }
+        }
+
+        /// <summary>
+        /// Sets the selection action on deactivated.
+        /// </summary>
+        protected virtual void SetSelectionOnDeactivatedAction()
+        {
+            SelectOnDeactivatedAction.ClearSources();
+            if (Facade.SelectionAction != null)
+            {
                 SelectOnDeactivatedAction.AddSource(Facade.SelectionAction);
             }
         }
