@@ -184,6 +184,22 @@
         }
 
         /// <summary>
+        /// Configures the cursor lock threshold based on the facade settings.
+        /// </summary>
+        public virtual void ConfigureCursorLockThreshold()
+        {
+            Caster.CursorLockThreshold = Facade.CursorLockThreshold;
+        }
+
+        /// <summary>
+        /// Configures the transition duration based on the facade settings.
+        /// </summary>
+        public virtual void ConfigureTransitionDuration()
+        {
+            Caster.TransitionDuration = Facade.TransitionDuration;
+        }
+
+        /// <summary>
         /// Configures the object follow sources based on the facade settings.
         /// </summary>
         public virtual void ConfigureFollowSources()
@@ -305,6 +321,8 @@
             ConfigureRaycastRules();
             ConfigureFollowSources();
             ConfigureSelectionType();
+            ConfigureCursorLockThreshold();
+            ConfigureTransitionDuration();
         }
 
         /// <summary>

@@ -198,6 +198,48 @@
                 }
             }
         }
+        [Tooltip("The amount of distance the cursor has to move before the destination of the cursor is updated to a new position.")]
+        [SerializeField]
+        private float cursorLockThreshold;
+        /// <summary>
+        /// The amount of distance the cursor has to move before the destination of the cursor is updated to a new position.
+        /// </summary>
+        public float CursorLockThreshold
+        {
+            get
+            {
+                return cursorLockThreshold;
+            }
+            set
+            {
+                cursorLockThreshold = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterCursorLockThresholdChange();
+                }
+            }
+        }
+        [Tooltip("The duration it takes to transition previous destination point to the current actual target point.")]
+        [SerializeField]
+        private float transitionDuration;
+        /// <summary>
+        /// The duration it takes to transition previous destination point to the current actual target point.
+        /// </summary>
+        public float TransitionDuration
+        {
+            get
+            {
+                return transitionDuration;
+            }
+            set
+            {
+                transitionDuration = value;
+                if (this.IsMemberChangeAllowed())
+                {
+                    OnAfterTransitionDurationChange();
+                }
+            }
+        }
         #endregion
 
         #region Pointer Events
@@ -425,6 +467,22 @@
         protected virtual void OnAfterRaycastRulesChange()
         {
             Configuration.ConfigureRaycastRules();
+        }
+
+        /// <summary>
+        /// Called after <see cref="CursorLockThreshold"/> has been changed.
+        /// </summary>
+        protected virtual void OnAfterCursorLockThresholdChange()
+        {
+            Configuration.ConfigureCursorLockThreshold();
+        }
+
+        /// <summary>
+        /// Called after <see cref="TransitionDuration"/> has been changed.
+        /// </summary>
+        protected virtual void OnAfterTransitionDurationChange()
+        {
+            Configuration.ConfigureTransitionDuration();
         }
     }
 }
